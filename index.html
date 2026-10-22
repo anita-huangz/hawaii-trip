@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>夏威夷旅行计划 12月9–19日</title>
+    <style>
+      :root {
+        --bg: #f4f6f4;
+        --surface: #ffffff;
+        --surface-2: #eef3f1;
+        --ink: #16303a;
+        --muted: #5d737a;
+        --line: #d9e2df;
+        --teal: #0b7285;
+        --teal-soft: #e0f0ee;
+        --green: #2b7a4b;
+        --green-soft: #e2f1e5;
+        --coral: #c2432f;
+        --coral-soft: #fbe9e4;
+        --amber: #9a6a12;
+        --amber-soft: #f7ecd2;
+        --c-flight: #0b7285;
+        --c-waikiki: #c9762b;
+        --c-waikoloa: #2b7a4b;
+        --c-other: #94a7ac;
+        color-scheme: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0d1b20;
+          --surface: #14262d;
+          --surface-2: #1a3038;
+          --ink: #e9f2f1;
+          --muted: #9db4ba;
+          --line: #2b424b;
+          --teal: #4fc3cf;
+          --teal-soft: #17393f;
+          --green: #7cc79a;
+          --green-soft: #1d3527;
+          --coral: #f0917e;
+          --coral-soft: #3d241e;
+          --amber: #e3b95c;
+          --amber-soft: #38300f;
+          --c-flight: #4fc3cf;
+          --c-waikiki: #e09a4e;
+          --c-waikoloa: #7cc79a;
+          --c-other: #6d868d;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 1060px; margin: 0 auto; padding: 28px 18px 56px; }
+      h1, h2, h3 { font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif; font-weight: 600; margin: 0; }
+      .zh { color: var(--muted); font-weight: 400; }
+      .zh-inline { font-size: 0.82em; color: var(--muted); font-weight: 400; }
+      button:focus-visible, input:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+      /* ---------- header ---------- */
+      header { margin-bottom: 22px; }
+      header h1 { font-size: clamp(1.7rem, 4.5vw, 2.5rem); line-height: 1.15; }
+      header h1 .zh-title { display: block; font-family: inherit; font-size: 0.52em; color: var(--muted); font-weight: 400; margin-top: 6px; letter-spacing: 0.02em; }
+      header p.lede { margin: 12px 0 0; font-size: 1.02rem; max-width: 46rem; }
+      .basics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+      .basic { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+      .basic .k { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+      .basic .k .zh-inline { text-transform: none; letter-spacing: 0; }
+      .basic .v { font-size: 1.06rem; font-weight: 650; margin-top: 2px; }
+      .basic .s { font-size: 0.85rem; color: var(--muted); }
+
+      /* ---------- controls ---------- */
+      .controls {
+        display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+        padding: 14px 16px; margin: 22px 0 8px;
+      }
+      .ctl { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
+      .ctl .lbl { font-size: 0.9rem; font-weight: 600; }
+      .seg { display: inline-flex; max-width: 100%; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+      .seg button {
+        appearance: none; border: 0; background: transparent; color: var(--ink);
+        font: inherit; font-size: 0.9rem; padding: 6px 13px; cursor: pointer; white-space: nowrap;
+      }
+      .seg button + button { border-left: 1px solid var(--line); }
+      .seg button[aria-pressed="true"] { background: var(--teal); color: #fff; font-weight: 650; }
+      .seg button[aria-pressed="true"] .zh-inline { color: inherit; }
+      @media (prefers-color-scheme: dark) {
+        .seg button[aria-pressed="true"] { color: #0d1b20; }
+      }
+      .extras { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; border-top: 1px dashed var(--line); padding-top: 12px; }
+      .extras label.chk { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+      .extras input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--teal); }
+      .num { display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; color: var(--muted); }
+      .num input {
+        width: 76px; font: inherit; font-size: 0.9rem; color: var(--ink); background: var(--surface-2);
+        border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px;
+      }
+      .num input:disabled { opacity: 0.5; }
+      .controls .hint { grid-column: 1 / -1; margin: 0; font-size: 0.83rem; color: var(--muted); }
+      .controls .hint + .hint { margin-top: -6px; }
+
+      /* ---------- at a glance ---------- */
+      section { margin-top: 30px; }
+      section > h2 { font-size: 1.35rem; }
+      section > h2 .zh { font-size: 0.72em; margin-left: 8px; }
+      .legend { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 10px; font-size: 0.85rem; color: var(--muted); }
+      .legend span { display: inline-flex; align-items: center; gap: 6px; }
+      .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; flex: none; }
+      .dot.f { background: var(--c-flight); }
+      .dot.a { background: var(--c-waikiki); }
+      .dot.b { background: var(--c-waikoloa); }
+      .dot.o { background: var(--c-other); }
+      .glance { margin-top: 12px; display: grid; gap: 8px; }
+      .grow {
+        display: grid; grid-template-columns: 190px 1fr 130px; gap: 12px; align-items: center;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px;
+      }
+      .grow.lowest { border-color: var(--teal); }
+      .grow .dates { font-weight: 650; }
+      .grow .dates small { display: block; font-weight: 400; color: var(--muted); font-size: 0.8rem; line-height: 1.35; }
+      .mini { font-size: 0.7rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; margin-left: 6px; vertical-align: 2px; background: var(--amber-soft); color: var(--amber); }
+      .track { display: flex; height: 14px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
+      .track i { display: block; height: 100%; transition: width 0.35s ease; }
+      .track i.f { background: var(--c-flight); }
+      .track i.a { background: var(--c-waikiki); }
+      .track i.b { background: var(--c-waikoloa); }
+      .track i.o { background: var(--c-other); }
+      .track i + i { border-left: 2px solid var(--surface); }
+      .grow .amt { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+      .grow .amt small { display: block; font-weight: 400; color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
+      .grow .amt small.delta { color: var(--ink); font-weight: 600; }
+
+      /* ---------- window cards ---------- */
+      .cards { display: grid; gap: 18px; margin-top: 16px; }
+      .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+      .card.best { border: 2px solid var(--teal); padding: 19px 21px; }
+      .card-head { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: baseline; justify-content: space-between; }
+      .card-head .left { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline; }
+      .card-head h3 { font-size: 1.45rem; }
+      .card .sub { flex-basis: 100%; font-size: 0.85rem; color: var(--muted); margin-top: -4px; }
+      .tag { font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+      .tag.green { background: var(--green-soft); color: var(--green); }
+      .tag.coral { background: var(--coral-soft); color: var(--coral); }
+      .tag.amber { background: var(--amber-soft); color: var(--amber); }
+      .est { text-align: right; }
+      .est .n { font-size: 1.55rem; font-weight: 750; font-variant-numeric: tabular-nums; line-height: 1.1; }
+      .est .c { font-size: 0.8rem; color: var(--muted); }
+      .flights {
+        display: flex; flex-wrap: wrap; gap: 6px 26px; margin-top: 14px;
+        background: var(--surface-2); border-radius: 8px; padding: 10px 14px; font-size: 0.95rem;
+      }
+      .flights b { font-variant-numeric: tabular-nums; }
+      .flights .fl-lbl { font-weight: 650; }
+      .split { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; font-size: 0.88rem; color: var(--muted); }
+      .split span { display: inline-flex; align-items: center; gap: 6px; }
+      .split b { color: var(--ink); font-variant-numeric: tabular-nums; }
+      .alert {
+        margin-top: 12px; padding: 9px 14px; border-radius: 8px; font-size: 0.9rem;
+        background: var(--amber-soft); color: var(--amber); font-weight: 600;
+      }
+      .hotels { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 30px; margin-top: 16px; }
+      .hotels h4 { margin: 0 0 6px; font-size: 0.95rem; font-weight: 700; }
+      .hotels h4 .zh-inline { margin-left: 4px; }
+      .hotels h4 .stay { display: block; font-size: 0.8rem; font-weight: 400; color: var(--muted); }
+      ul.prices { list-style: none; margin: 0; padding: 0; }
+      ul.prices li {
+        display: flex; justify-content: space-between; gap: 12px; padding: 5px 0;
+        border-bottom: 1px dashed var(--line); font-size: 0.93rem;
+      }
+      ul.prices li:last-child { border-bottom: 0; }
+      ul.prices .p { font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      ul.prices li.pick { background: var(--teal-soft); border-radius: 6px; padding-left: 8px; padding-right: 8px; margin: 0 -8px; }
+      .flag { font-size: 0.75rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; margin-left: 6px; white-space: nowrap; vertical-align: 1px; }
+      .flag.soldout { background: var(--coral-soft); color: var(--coral); }
+      .flag.last { background: var(--amber-soft); color: var(--amber); }
+      .flag.used { background: var(--teal-soft); color: var(--teal); }
+      .soldout-name { color: var(--muted); text-decoration: line-through; }
+      .watch { margin: 14px 0 0; padding-left: 20px; font-size: 0.92rem; }
+      .watch li { margin: 3px 0; }
+      .watch .zh-inline { display: block; }
+      .note { margin: 12px 0 0; font-size: 0.93rem; color: var(--muted); }
+      .note b { color: var(--ink); }
+
+      /* ---------- recommendation / fine print ---------- */
+      .reco { background: var(--teal-soft); border-radius: 14px; padding: 22px 24px; margin-top: 34px; }
+      .reco h2 { font-size: 1.35rem; }
+      .reco h2 .zh { font-size: 0.72em; margin-left: 8px; color: var(--muted); }
+      .reco p { margin: 10px 0 0; max-width: 52rem; }
+      .reco p:first-of-type { font-size: 1.05rem; }
+      .fineprint { margin-top: 30px; border-top: 1px solid var(--line); padding-top: 16px; }
+      .fineprint h2 { font-size: 1.05rem; font-family: inherit; font-weight: 700; }
+      .fineprint h2 .zh { font-size: 0.85em; margin-left: 6px; }
+      .fineprint ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-size: 0.88rem; }
+      .fineprint li { margin: 4px 0; }
+      .fineprint .before { margin-bottom: 26px; }
+      .fineprint .before ul { color: var(--ink); font-size: 0.93rem; }
+      .fineprint .before li { margin: 6px 0; }
+
+      @media (max-width: 720px) {
+        .basics { grid-template-columns: 1fr 1fr; }
+        .controls { grid-template-columns: 1fr; }
+        .seg button { padding: 6px 10px; font-size: 0.85rem; flex: 1; }
+        .seg button .zh-inline { display: none; }
+        .hotels { grid-template-columns: 1fr; }
+        .grow { grid-template-columns: 1fr 110px; }
+        .grow .track { grid-column: 1 / -1; order: 3; }
+        .est { text-align: left; }
+        .card-head { flex-direction: column; gap: 6px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .track i { transition: none; }
+      }
+    
+      /* ================= tabs ================= */
+      .wrap { padding-bottom: 120px; }
+      .tabs { display: flex; gap: 2px; margin: 22px 0 0; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+      .tabs::-webkit-scrollbar { display: none; }
+      .tabs button {
+        appearance: none; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--muted);
+        font: inherit; font-size: 1rem; font-weight: 650; padding: 11px 16px 9px; cursor: pointer; white-space: nowrap;
+      }
+      .tabs button:hover { color: var(--ink); }
+      .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--teal); }
+      .tabs .zh-inline { margin-left: 4px; }
+      .panel { padding-top: 4px; }
+      .callout { background: var(--teal-soft); border-radius: 12px; padding: 14px 18px; margin-top: 18px; max-width: 62rem; }
+      .callout.warn { background: var(--amber-soft); }
+      .callout p { margin: 0; }
+      .callout p + p { margin-top: 8px; }
+      .callout .zh-inline { display: block; margin-top: 6px; }
+      .tag.teal { background: var(--teal-soft); color: var(--teal); }
+      .grow.picked { border-color: var(--teal); }
+      .sec-h { font-size: 1.3rem; margin: 30px 0 0; }
+      .sec-h .zh { font-size: 0.72em; margin-left: 8px; }
+      .sec-p { margin: 8px 0 0; max-width: 56rem; color: var(--muted); font-size: 0.94rem; }
+      .sec-p b { color: var(--ink); }
+
+      /* ================= stays ================= */
+      .stay-group { margin-top: 28px; }
+      .stay-group h3 { font-size: 1.25rem; }
+      .stay-group .meta { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; max-width: 56rem; }
+      .opts { display: grid; gap: 10px; margin-top: 12px; }
+      .opt {
+        display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; cursor: pointer;
+      }
+      .opt.selected { border: 2px solid var(--teal); padding: 13px 15px; }
+      .opt input[type="radio"] { margin-top: 5px; accent-color: var(--teal); width: 16px; height: 16px; }
+      .opt .nm { font-weight: 700; }
+      .badge { font-size: 0.72rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 1px; background: var(--surface-2); color: var(--muted); }
+      .badge.warn { background: var(--amber-soft); color: var(--amber); }
+      .badge.good { background: var(--green-soft); color: var(--green); }
+      .opt .basis { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+      .opt ul { margin: 8px 0 0; padding-left: 18px; font-size: 0.88rem; color: var(--muted); }
+      .opt li { margin: 3px 0; }
+      .opt .price { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+      .opt .price small { display: block; font-weight: 400; color: var(--muted); font-size: 0.78rem; }
+      .opt .edit { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 0.86rem; color: var(--muted); }
+      .opt .edit input {
+        width: 84px; font: inherit; font-size: 0.9rem; color: var(--ink); background: var(--surface-2);
+        border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px;
+      }
+      .rules { margin: 10px 0 0; padding-left: 20px; max-width: 58rem; font-size: 0.92rem; }
+      .rules li { margin: 6px 0; }
+      .rules li span.zh-inline { display: block; }
+      table.tbl { border-collapse: collapse; width: 100%; max-width: 58rem; margin-top: 10px; font-size: 0.9rem; }
+      table.tbl th, table.tbl td { text-align: left; padding: 7px 10px 7px 0; border-bottom: 1px dashed var(--line); vertical-align: top; }
+      table.tbl th { color: var(--muted); font-weight: 600; font-size: 0.82rem; }
+
+      /* ================= activities ================= */
+      .filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 16px; }
+      .act { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin-top: 12px; }
+      .act.off { opacity: 0.62; }
+      .act-head { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: flex-start; }
+      .act-head label.chk { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+      .act-head input[type="checkbox"] { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--teal); }
+      .act .nm { font-weight: 700; font-size: 1.05rem; }
+      .act .isl { font-size: 0.74rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 1px; }
+      .act .isl.oahu { background: var(--teal-soft); color: var(--teal); }
+      .act .isl.big { background: var(--green-soft); color: var(--green); }
+      .act-cost { text-align: right; font-weight: 750; font-variant-numeric: tabular-nums; }
+      .act-cost small { display: block; font-weight: 400; color: var(--muted); font-size: 0.78rem; }
+      .act-meta { margin: 4px 0 0 28px; font-size: 0.85rem; color: var(--muted); }
+      .act .desc { margin: 8px 0 0 28px; font-size: 0.93rem; max-width: 56rem; }
+      .act-ctl { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 10px 0 0 28px; font-size: 0.88rem; color: var(--muted); }
+      .act-ctl label { display: inline-flex; align-items: center; gap: 6px; }
+      .act-ctl select {
+        font: inherit; font-size: 0.88rem; color: var(--ink); background: var(--surface-2);
+        border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; max-width: 100%;
+      }
+      table.optt { border-collapse: collapse; width: calc(100% - 28px); margin: 12px 0 0 28px; font-size: 0.86rem; }
+      table.optt th, table.optt td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px dashed var(--line); vertical-align: top; }
+      table.optt th { color: var(--muted); font-weight: 600; font-size: 0.78rem; }
+      table.optt td.p { font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      table.optt tr.sel td { background: var(--teal-soft); }
+      table.optt .src { color: var(--muted); font-size: 0.78rem; }
+      .act .best, .act .free { margin: 8px 0 0 28px; font-size: 0.9rem; max-width: 56rem; }
+      .act .free { color: var(--muted); }
+      .rowin { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 12px; }
+      .rowin label { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; color: var(--muted); }
+      .rowin input {
+        width: 84px; font: inherit; font-size: 0.9rem; color: var(--ink); background: var(--surface-2);
+        border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px;
+      }
+
+      /* ================= daily plan ================= */
+      .day { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--teal); border-radius: 14px; padding: 16px 20px 14px; margin-top: 16px; }
+      .day.big { border-left-color: var(--green); }
+      .day-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+      .day-head h3 { font-size: 1.22rem; }
+      .day-date { font-weight: 700; font-variant-numeric: tabular-nums; }
+      .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+      .chip { font-size: 0.76rem; font-weight: 650; padding: 2px 9px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
+      .chip.oahu { background: var(--teal-soft); color: var(--teal); }
+      .chip.big { background: var(--green-soft); color: var(--green); }
+      .chip.long { background: var(--amber-soft); color: var(--amber); }
+      .chip.book { background: var(--coral-soft); color: var(--coral); }
+      .tl { list-style: none; margin: 12px 0 0; padding: 0; }
+      .tl li { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 8px 0; border-top: 1px dashed var(--line); }
+      .tl .t { font-weight: 650; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.88rem; }
+      .tl .h { font-weight: 650; }
+      .tl .d { color: var(--muted); font-size: 0.9rem; }
+      .tl .c { font-size: 0.82rem; font-weight: 650; color: var(--teal); }
+      .day .bk { margin: 10px 0 0; font-size: 0.88rem; color: var(--muted); }
+      .day .bk b { color: var(--ink); }
+      .two { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 36px; max-width: 58rem; }
+      .eats { margin: 8px 0 0; padding-left: 18px; font-size: 0.9rem; }
+      .eats li { margin: 4px 0; }
+      .eats li span { color: var(--muted); }
+
+      /* ================= budget bar ================= */
+      .budgetbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--surface); border-top: 2px solid var(--teal); }
+      .budgetbar summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; max-width: 1060px; margin: 0 auto; padding: 10px 18px; }
+      .budgetbar summary::-webkit-details-marker { display: none; }
+      .bb-l { font-weight: 650; }
+      .bb-n { font-size: 1.35rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+      .bb-s { color: var(--muted); font-size: 0.88rem; }
+      .bb-t { margin-left: auto; color: var(--teal); font-weight: 650; font-size: 0.88rem; }
+      .budgetbar[open] .bb-t::after { content: "（收起）"; }
+      .bb-body { max-width: 1060px; margin: 0 auto; padding: 0 18px 14px; max-height: 50vh; overflow-y: auto; }
+      .bb-body table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+      .bb-body td { padding: 4px 0; border-bottom: 1px dashed var(--line); }
+      .bb-body td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 650; }
+      .bb-body .warn { margin: 8px 0 0; color: var(--amber); font-weight: 650; font-size: 0.88rem; }
+      .bb-body .fine { margin: 8px 0 0; color: var(--muted); font-size: 0.8rem; }
+
+      @media (max-width: 720px) {
+        .opt { grid-template-columns: auto 1fr; }
+        .opt .price { grid-column: 2; text-align: left; }
+        .tl li { grid-template-columns: 1fr; gap: 2px; }
+        .two { grid-template-columns: 1fr; }
+        .act-meta, .act .desc, .act-ctl, .act .best, .act .free { margin-left: 0; }
+        table.optt { margin-left: 0; width: 100%; display: block; overflow-x: auto; }
+        .tabs button { padding: 10px 12px 8px; font-size: 0.94rem; }
+      }
+
+      /* ================= 分工 / 机票卡 ================= */
+      .flightcard { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--teal); border-radius: 12px; padding: 14px 18px; margin-top: 18px; max-width: 62rem; }
+      .flightcard table.tbl { margin-top: 6px; }
+      .task { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin-top: 8px; }
+      .task.done { opacity: 0.55; }
+      .task.done .tt { text-decoration: line-through; }
+      .task input[type="checkbox"] { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--teal); }
+      .task .tt { font-weight: 650; }
+      .task .td { font-size: 0.88rem; color: var(--muted); margin-top: 2px; }
+      .task .tdue { font-size: 0.8rem; color: var(--coral); font-weight: 650; margin-top: 3px; }
+      .task select { font: inherit; font-size: 0.9rem; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; max-width: 150px; }
+      .rowin input[type="text"] { width: 130px; }
+      .btn { appearance: none; border: 0; background: var(--teal); color: #fff; font: inherit; font-weight: 650; padding: 8px 16px; border-radius: 999px; cursor: pointer; }
+      @media (prefers-color-scheme: dark) { .btn { color: #0d1b20; } }
+      .taskta { width: 100%; max-width: 58rem; margin-top: 10px; font: inherit; font-size: 0.88rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+      @media (max-width: 720px) { .task { grid-template-columns: auto 1fr; } .task select { grid-column: 2; max-width: none; } }
+
+      /* ================= v2: 链接 / 地址 / 负责人 ================= */
+      .links { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 10px; }
+      a.lk { font-size: 0.8rem; font-weight: 650; text-decoration: none; padding: 3px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--teal); background: var(--surface-2); white-space: nowrap; }
+      a.lk.main { background: var(--teal); color: #fff; border-color: var(--teal); }
+      @media (prefers-color-scheme: dark) { a.lk.main { color: #0d1b20; } }
+      a.lk:hover { text-decoration: underline; }
+      .addr { font-size: 0.82rem; color: var(--muted); margin-top: 6px; }
+      .addr a { color: var(--muted); }
+      .owner { display: inline-block; font-size: 0.76rem; font-weight: 700; padding: 1px 9px; border-radius: 999px; background: var(--amber-soft); color: var(--amber); margin-right: 8px; }
+      .stay-group h3 .owner { margin-left: 10px; vertical-align: 3px; }
+      .task .tlinks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+      .task .tloc { font-size: 0.74rem; font-weight: 700; color: var(--teal); }
+      details.hint { grid-column: 1 / -1; font-size: 0.83rem; color: var(--muted); }
+      details.hint summary { cursor: pointer; font-weight: 650; color: var(--ink); }
+      details.hint textarea { width: 100%; margin-top: 8px; font: inherit; font-size: 0.84rem; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>夏威夷 12月9–19日：瓦胡岛 + 大岛
+          <span class="zh-title">Hawaii · Oahu + Big Island · 风景优先，慢节奏，机票已订</span>
+        </h1>
+        <p class="lede">日期和机票已经定了。这份计划把住宿、活动价格、每日行程和分工串在一起：山谷、海岸、火山，加上冲浪、水肺潜水、蝠鲼夜游和本地美食，每天都留出海边时间。价格来自商家官网和当地攻略（2026年10月21日查到），<b>不是实时报价</b>，会变动；住宿和活动卡片里都附了预订链接，订之前点进去核对。地址保留英文，方便直接在地图和订票网站里对应。</p>
+
+        <div class="basics" aria-label="行程概览">
+          <div class="basic">
+            <div class="k">行程</div>
+            <div class="v">12月9–19日 · 10晚</div>
+            <div class="s">周三到周六 · 2026年</div>
+          </div>
+          <div class="basic">
+            <div class="k">人数</div>
+            <div class="v">4人</div>
+            <div class="s">3人从芝加哥 (ORD) · 1人从西雅图 (SEA)</div>
+          </div>
+          <div class="basic">
+            <div class="k">住宿</div>
+            <div class="v">瓦胡岛5晚 + 大岛5晚</div>
+            <div class="s">威基基 Waikiki 5 → 火山村 Volcano 2 → 瓦科洛亚 Waikoloa 3</div>
+          </div>
+          <div class="basic">
+            <div class="k">机票</div>
+            <div class="v">已订：往返檀香山（Honolulu, HNL）</div>
+            <div class="s">去程 ORD→HNL，回程 HNL→ORD</div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="tabs" role="tablist" aria-label="计划分区">
+        <button type="button" role="tab" id="tab-plan" aria-controls="panel-plan" aria-selected="true">每日行程</button>
+        <button type="button" role="tab" id="tab-activities" aria-controls="panel-activities" aria-selected="false">活动</button>
+        <button type="button" role="tab" id="tab-stays" aria-controls="panel-stays" aria-selected="false">住宿</button>
+        <button type="button" role="tab" id="tab-tasks" aria-controls="panel-tasks" aria-selected="false">分工</button>
+      </nav>
+
+      <!-- ===================== 每日行程 ===================== -->
+      <div class="panel" id="panel-plan" role="tabpanel" aria-labelledby="tab-plan">
+        <div class="flightcard">
+          <b>已订机票</b>（美联航 United Economy，Basic Economy 票价；来自你发的截图）
+          <table class="tbl">
+            <tr><td><b>去程 周三 12/9</b></td><td>ORD 9:35am → HNL 2:47pm（飞行9小时12分）</td></tr>
+            <tr><td><b>回程 周六 12/19</b></td><td>HNL 4:50pm → ORD，周日 12/20 5:01am 到（飞行8小时11分）</td></tr>
+          </table>
+          <p class="sec-p" style="margin-top:6px">截图只显示一位乘客的行程；西雅图出发的家人请把他的航班也发我。Basic Economy 的行李和选座规则请再确认。</p>
+        </div>
+        <div class="callout warn">
+          <p><b>重要变化：回程从檀香山起飞，不是科纳。</b>所以 12/19 必须先从科纳 (KOA) 飞回檀香山（Honolulu）（约45分钟），再转 4:50pm 的航班。岛际机票和美联航是分开购买的，晚点或取消没有保护，到 HNL 后还要取行李重新托运。建议订 12/19 上午（10点前起飞）的 KOA→HNL，留4–5小时缓冲，<b>不要订下午的岛际航班</b>。所以我把 12/19 改成早起返程，也不再建议 12/18 的冒纳凯阿山顶团（晚上10点后才回）。大岛的岛际机票现在是两程（12/14 去、12/19 回）。</p>
+        </div>
+        <div class="callout">
+          <p><b>行程节奏。</b>每天一件主要的事，多数下午留给海边（全程约19小时海边时间），长途开车只有两天：12/14 和 12/16。风景优先：瓦胡岛看钻石头山（Diamond Head）、Kualoa 山谷和东岸海岸；大岛看基拉韦厄（Kīlauea） 火山口、怀皮奥 Waipiʻo 和波罗吕（Polulū） 山谷、科哈拉海岸（Kohala Coast）。海洋日：恐龙湾（Hanauma Bay） 浮潜、冲浪课、水肺潜水 scuba 和蝠鲼 manta ray 夜游。时间都是大致安排。</p>
+        </div>
+        <div class="callout warn">
+          <p><b>两件会影响计划的事。</b>(1) 基拉韦厄是短暂的、难预测的间歇性喷发——最近一次（第55次，10月17日）只持续约六小时——所以看到喷泉靠运气，火山口边缘和天黑后的火光才是稳定的看点。出发当天早上请看美国地质调查局 (USGS) 的每日更新和国家公园通知。(2) 8月的风暴曾让大岛一些公园和商家关闭；出发前一周再确认 ʻAkaka 瀑布、Hāpuna 海滩，以及你们打算专程去的面包店或商店。</p>
+        </div>
+
+        <h2 class="sec-h">需要提前预订</h2>
+        <table class="tbl">
+          <tr><th>时间</th><th>订什么</th><th>原因</th></tr>
+          <tr><td><b>现在</b></td><td>火山村（Volcano Village） 住宿、瓦科洛亚（Waikoloa） 住宿、大岛租车、12/14 和 12/19 的两程岛际机票</td><td>Volcano House 只有33间房；去年冬天科纳机场是全美租车最贵的机场。</td></tr>
+          <tr><td><b>现在到出发前2周</b></td><td>潜水、蝠鲼夜游、Kualoa 团、冲浪课、钻石头山（Diamond Head） 预约</td><td>12月是旺季；Kualoa 的团常常售罄；钻石头山（Diamond Head） 对非本地居民需要州立公园预约。</td></tr>
+          <tr><td><b>12/10 周四 夏威夷时间 7:00</b></td><td>12/12 的恐龙湾（Hanauma Bay） 门票</td><td>提前正好2天放票，早上的时段最先卖完。（夏威夷7:00 = 芝加哥 11:00 = 西雅图 9:00）</td></tr>
+          <tr><td><b>行程中每天早上</b></td><td>USGS 基拉韦厄更新、国家公园通知、天气和海况</td><td>公园的区域和步道会随火山活动开放或关闭。</td></tr>
+        </table>
+
+        <div id="days"></div>
+
+        <h2 class="sec-h">本地美食清单</h2>
+        <p class="sec-p">这些店在2026年的攻略和榜单里仍然出现。营业时间会变——很多小店周日和周一早早打烊，poke 下午早早卖完，所以建议中午去。</p>
+        <div class="two" style="margin-top:10px">
+          <div>
+            <b>瓦胡岛</b>
+            <ul class="eats">
+              <li>Leonard’s Bakery <span>— 现炸马拉萨达甜甜圈（933 Kapahulu Ave）</span></li>
+              <li>Rainbow Drive-In <span>— loco moco 和 plate lunch（3308 Kanaina Ave）</span></li>
+              <li>Ono Seafood <span>— poke 饭；会卖完，中午前去（747 Kapahulu Ave）</span></li>
+              <li>Helena’s Hawaiian Food <span>— pipikaula 短肋排、laulau；先查营业时间</span></li>
+              <li>Waiahole Poi Factory <span>— 东岸的 laulau、卡鲁瓦猪肉（48-140 Kamehameha Hwy, Kāneʻohe）</span></li>
+              <li>Waiola Shave Ice <span>— 只收现金</span></li>
+              <li>Foodland / Maguro Brothers <span>— 外带 poke</span></li>
+            </ul>
+          </div>
+          <div>
+            <b>大岛</b>
+            <ul class="eats">
+              <li>Da Poke Shack（科纳）<span>— 会卖完；10点开门</span></li>
+              <li>Umeke’s Fish Market（科纳）<span>— poke 饭、plate lunch，靠近 Honokōhau 港</span></li>
+              <li>KTA Super Stores <span>— poke 和马拉萨达</span></li>
+              <li>Suisan Fish Market 与 Cafe 100（希洛）<span>— poke；loco moco 的发源地</span></li>
+              <li>Tex Drive In（Honokaʻa）<span>— 去怀皮奥路上的马拉萨达</span></li>
+              <li>Kawaihae Marketplace <span>— 科哈拉海岸的 poke 饭团</span></li>
+              <li>Kīlauea Lodge、Thai Thai Lemongrass <span>— 火山村晚餐</span></li>
+              <li>Punaluʻu Bake Shop <span>— 据报道8月风暴后关闭；先别去</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== 活动 ===================== -->
+      <div class="panel" id="panel-activities" role="tabpanel" aria-labelledby="tab-activities" hidden>
+        <div class="callout">
+          <p><b>怎么看这页。</b>每张卡片列出我能查到价格的商家，标出“性价比最高”的选择，有免费替代的也写出来。勾选想做的项目、设好人数，页面底部的总价会自动更新。价格是成人起价（2026年10月21日查到），除非注明，不含税、小费和手续费。</p>
+        </div>
+        <div class="filters">
+          <span class="seg" id="segActFilter" role="group" aria-label="筛选活动">
+            <button type="button" data-v="all" aria-pressed="true">全部</button>
+            <button type="button" data-v="oahu" aria-pressed="false">瓦胡岛 Oʻahu</button>
+            <button type="button" data-v="big" aria-pressed="false">大岛 Big Island</button>
+            <button type="button" data-v="free" aria-pressed="false">有免费选项</button>
+            <button type="button" data-v="on" aria-pressed="false">已选</button>
+          </span>
+        </div>
+        <div id="actList"></div>
+
+        <h2 class="sec-h">机票、租车与餐饮</h2>
+        <p class="sec-p">下面都是占位数字，可以改。去年冬天科纳机场最便宜车型平均 $127/天，某价格追踪网站显示12月平均约 $80/天；檀香山平均约 $62。瓦胡岛只有周五到周六需要车（东岸和恐龙湾）；威基基酒店停车平均约 $45/晚，Waikiki Banyan 含一个车位。</p>
+        <div class="rowin">
+          <label>机票实付总价 $（4人；默认是之前查到的价格，请改成实际）<input type="number" id="xFlights" min="0" step="50" value="2566" /></label>
+          <label>岛际机票两程合计 $（默认估算）<input type="number" id="xInter" min="0" step="20" value="560" /></label>
+          <label>大岛租车 $/天 × 5天 <input type="number" id="xCar" min="0" step="10" value="100" /></label>
+          <label>瓦胡岛租车2天含停车，合计 $ <input type="number" id="xOahuCar" min="0" step="25" value="250" /></label>
+          <label>全家餐饮 $/天 × 10天 <input type="number" id="xFood" min="0" step="25" value="200" /></label>
+        </div>
+      </div>
+
+      <!-- ===================== 住宿 ===================== -->
+      <div class="panel" id="panel-stays" role="tabpanel" aria-labelledby="tab-stays" hidden>
+        <div class="callout">
+          <p><b>对原计划的一个改动：把大岛住宿拆成两段。</b>从瓦科洛亚到火山单程约2.5小时，而火山最美的时刻——天黑后的火光——正好是你们该开车回去的时候。所以默认方案是<b>火山村2晚 + 瓦科洛亚海岸3晚</b>，而不是瓦科洛亚住5晚。备选方案B（全住瓦科洛亚）在页面下方。</p>
+        </div>
+
+        <div class="controls" style="margin-top:16px">
+          <div class="ctl">
+            <span class="lbl">酒店房间数</span>
+            <span class="seg" id="segStayRooms" role="group" aria-label="房间数">
+              <button type="button" data-v="1" aria-pressed="false">1间</button>
+              <button type="button" data-v="2" aria-pressed="true">2间</button>
+            </span>
+          </div>
+          <div class="ctl">
+            <label class="chk" style="display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:0.9rem;cursor:pointer"><input type="checkbox" id="chkFees" style="width:17px;height:17px;accent-color:var(--teal)" /> 加上度假村费估算（每间酒店房 $50/晚）</label>
+          </div>
+          <p class="hint">酒店价格来自你们原表格里 10月18–19日的 Expedia 快照（2成人/1间房，含税）。<b>这些不是实时价</b>：我这边无法打开订票网站，所以每个选项下面加了<b>预填日期和人数的官网/Expedia/Booking/Google Hotels 链接</b>，点进去就是你们这几天的实时价；查到后填进“你的报价”，总价会自动更新。公寓和民宿行用你自己输入的价格。酒店可能另加度假村费和停车费。各网站的预填参数我没法逐个测试，若日期没带进去请手动选。</p>
+          <details class="hint"><summary>让 Claude in Chrome / Cowork 浏览器代查实时价（点开复制提示词）</summary>
+            <textarea rows="7" readonly>请用浏览器打开 Expedia、Booking.com 和 Google Hotels，查下面三段住宿的实时价（4位成人，2间房或1套公寓，含税费），并整理成表格：酒店名、总价、每晚均价、是否可免费取消、度假村费、停车费、预订链接。只查价，不要下单或付款。
+1) 12/9–12/14 Waikiki：Outrigger Waikiki Beachcomber、Ramada Plaza Waikiki、Hilton Hawaiian Village、Moana Surfrider、Waikiki Banyan 公寓
+2) 12/14–12/16 Volcano Village：Volcano House（官网 hawaiivolcanohouse.com）、Volcano Village Lodge、Kīlauea Lodge、Volcano Heritage Cottages
+3) 12/16–12/19 Waikoloa：Waikoloa Beach Marriott、Hilton Waikoloa Village、Waikoloa Colony Villas 公寓、Fairmont Orchid</textarea></details>
+        </div>
+
+        <div id="stayGroups"></div>
+
+        <h2 class="sec-h">Airbnb、Vrbo 与公寓：哪些真的能订</h2>
+        <p class="sec-p">我查不到 Airbnb 的实时价格（上面每个公寓选项都有预填日期的 Airbnb / Vrbo 搜索链接），所以这一节只讲决定房源能不能安全预订的规则。夏威夷管得很严，不合规的房源会被平台下架——有时是你已经订了之后。</p>
+        <ul class="rules">
+          <li><b>瓦胡岛：</b>短租主要只在威基基这类度假区合法（还要看大楼自己的规定并完成登记）；度假区外的短住基本被禁止。法定最短天数是30天，市里较新的规定是90天——法院挑战之后，哪个在执行，各来源说法不一。不要为5晚订 Kailua 或北岸的整栋房子。在威基基请订公寓酒店（例如 Waikiki Banyan）或明确显示有效登记号的房源。</li>
+          <li><b>大岛：</b>夏威夷县的 Bill 47 现在要求所有短租（无论房东是否同住）都要向县里登记，平台必须把房源和登记号对应起来。瓦科洛亚海滩度假区的公寓和火山村小屋在这里很常见——订之前确认号码。</li>
+          <li><b>向每位房东要两个号码：</b>夏威夷 TAT 税号和县登记号（檀香山 TVU/NUC 或夏威夷县 STVR）。合规房源会公示；例如一个 Waikoloa Beach Villas 房源就标有县里的出租号码。</li>
+          <li><b>税费：</b>房价之外大约再加19%（州 TAT 2026年1月1日起升到11%，再加县 TAT 和 GET），公寓另有一次性清洁费。度假村费也要交税。</li>
+          <li><b>取消风险：</b>如果平台下架了房源，你得按12月的价格重订。威基基和瓦科洛亚这两段，优先选有现场管理的公寓酒店和度假区内的社区。</li>
+        </ul>
+
+        <h2 class="sec-h">备选方案B：5晚全住瓦科洛亚</h2>
+        <table class="tbl">
+          <tr><th></th><th>拆分（默认）</th><th>全住瓦科洛亚</th></tr>
+          <tr><td>火山</td><td>黄昏在火山口边走走、天黑后看火光；第二天不赶</td><td>一天往返约5小时车程，或坐直升机（$349起/人）——会错过夜晚的火光</td></tr>
+          <tr><td>搬行李</td><td>多搬一次家（12/16）</td><td>5晚一家酒店</td></tr>
+          <tr><td>海边时间</td><td>海岸3晚</td><td>海岸5晚</td></tr>
+          <tr><td>费用</td><td>火山区短租2026年6月均价约 $256/晚；其余类似</td><td>不用订火山住宿；火山一日游花油费和一整天</td></tr>
+        </table>
+        <p class="sec-p">如果选B，把 12/15 改成瓦科洛亚的海滩日，把火山改成 12/16 的一日游。</p>
+
+        <h2 class="sec-h">度假村费、停车费与税</h2>
+        <table class="tbl">
+          <tr><th>项目</th><th>我查到的情况</th></tr>
+          <tr><td>威基基度假村费</td><td>2026年多数大酒店约 $39–$61/晚；Hilton Hawaiian Village 约 $59。强制收取，且要交税。</td></tr>
+          <tr><td>威基基停车</td><td>平均约 $45/晚，代客约再加 $10；Hilton Hawaiian Village 约 $75/晚。Waikiki Banyan 房源含一个车位。</td></tr>
+          <tr><td>Hilton Waikoloa Village</td><td>一位住客评论写自停 $48、代客 $55/晚；2023年一篇评测说停车加度假村费税后超过 $100/晚。</td></tr>
+          <tr><td>住宿税</td><td>2026年住宿总税率约19%（TAT 1月1日起11%，再加县 TAT 和 GET）。</td></tr>
+          <tr><td>Volcano House</td><td>通常 $300–$500/晚；请直接官网订（Expedia 和 Booking 上没有；hawaiivolcanohouse.com）；游客中心翻修期间停车位有限。</td></tr>
+        </table>
+      </div>
+
+      <!-- ===================== 分工 ===================== -->
+      <div class="panel" id="panel-tasks" role="tabpanel" aria-labelledby="tab-tasks" hidden>
+        <div class="callout">
+          <p><b>怎么用。</b>先把四个名字改成你们自己的；每件事用下拉菜单指定负责人，完成后打勾。可以按<b>地点</b>（威基基 / 火山村 / 瓦科洛亚 / 跨岛）、按<b>类别</b>或按<b>负责人</b>查看。每项任务带有订房/预订链接，负责人在“住宿”和“活动”页的对应卡片上也会显示。默认分配大致按地点分：A 管瓦胡岛、B 管火山村、C 管瓦科洛亚与科纳活动、D（西雅图）管机票与租车。你的勾选、负责人和报价会记在<b>你自己的浏览器</b>里，刷新不丢，但别人看不到；要让大家看到同一份，点“生成文字版”复制到群里。</p>
+        </div>
+        <div class="filters"><span class="seg" id="segTaskView" role="group" aria-label="分工视图">
+          <button type="button" data-v="loc" aria-pressed="true">按地点</button>
+          <button type="button" data-v="cat" aria-pressed="false">按类别</button>
+          <button type="button" data-v="owner" aria-pressed="false">按负责人</button></span></div>
+        <div class="rowin" id="nameRow"></div>
+        <div id="taskSummary" class="sec-p"></div>
+        <div id="taskList"></div>
+        <div class="rowin">
+          <button type="button" class="btn" id="btnExport">生成文字版（复制到群里）</button>
+          <button type="button" class="btn" id="btnClear" style="background:var(--surface-2);color:var(--ink);border:1px solid var(--line)">清除本机记忆（恢复默认）</button>
+        </div>
+        <textarea id="taskText" class="taskta" rows="10" readonly aria-label="分工文字版" hidden></textarea>
+      </div>
+    </div>
+
+    <details class="budgetbar" id="budgetbar">
+      <summary>
+        <span class="bb-l">预估总价</span>
+        <span class="bb-n" id="bbTotal">&nbsp;</span>
+        <span class="bb-s" id="bbPer"></span>
+        <span class="bb-t">明细</span>
+      </summary>
+      <div class="bb-body" id="bbBody"></div>
+    </details>
+
+    <script>
+      (function () {
+        function $(id) { return document.getElementById(id); }
+        function byId(list, id) { for (var i = 0; i < list.length; i++) { if (list[i].id === id) return list[i]; } return null; }
+        function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+        function m2(n) {
+          var r = Math.round(n * 100) / 100;
+          return "$" + r.toLocaleString("en-US", { minimumFractionDigits: r % 1 ? 2 : 0, maximumFractionDigits: 2 });
+        }
+        function round100(n) { return Math.round(n / 100) * 100; }
+        function plain(s) { var d = document.createElement("div"); d.innerHTML = s; return d.textContent.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); }
+
+        /* ---------- 标签页 ---------- */
+        var TABS = ["plan", "activities", "stays", "tasks"];
+        function showTab(name, focus) {
+          TABS.forEach(function (t) {
+            var on = t === name;
+            $("panel-" + t).hidden = !on;
+            var b = $("tab-" + t);
+            b.setAttribute("aria-selected", on ? "true" : "false");
+            b.tabIndex = on ? 0 : -1;
+          });
+          if (focus) $("tab-" + name).focus();
+          try { if (history.replaceState) history.replaceState(null, "", "#" + name); } catch (e) { /* 预览沙盒 */ }
+        }
+        TABS.forEach(function (t, i) {
+          $("tab-" + t).addEventListener("click", function () { showTab(t); });
+          $("tab-" + t).addEventListener("keydown", function (e) {
+            var j = null;
+            if (e.key === "ArrowRight") j = (i + 1) % TABS.length;
+            else if (e.key === "ArrowLeft") j = (i + TABS.length - 1) % TABS.length;
+            if (j !== null) { e.preventDefault(); showTab(TABS[j], true); }
+          });
+        });
+
+        /* ---------- 共享状态 ---------- */
+        var PLAN = {
+          rooms: 2, fees: false, flights: 2566, inter: 560,
+          stay: { A: "outrigger", V: "vvrental", B: "condo" },
+          nightly: { banyan: 0, condo: 300, vvrental: 256, volcanohouse: 400 },
+          car: 100, carDays: 5, oahuCar: 250, food: 200, foodDays: 10,
+          filter: "all"
+        };
+
+        /* ---------- 住宿 ---------- */
+        var STAYS = {
+          A: {
+            title: "瓦胡岛 Oʻahu：威基基 Waikiki", dates: "12月9–14日", nights: 5,
+            intro: "周三入住、周一退房，共5晚。你们的威基基住宿正好撞上檀香山马拉松周末（12/12–13）：赛道沿 Kalākaua 大道经过各大酒店，终点在 Kapiolani 公园，周日凌晨5点起跑，会有噪音和封路。",
+            options: [
+              { id: "ramada", name: "Ramada Plaza Waikiki", tier: "经济", nightly: 1198 / 5, unit: "room", fee: 0,
+                basis: "Expedia 10/18–19：每间房5晚 $1,198",
+                notes: ["你们搜索结果里最便宜的酒店，约 $240/晚/间。", "订之前请确认离海滩的步行距离、度假村费和停车费——这些我没有核实。"] },
+              { id: "outrigger", name: "OUTRIGGER Waikiki Beachcomber", tier: "中档", nightly: 1950 / 5, unit: "room", fee: 50,
+                basis: "Expedia 10/18–19：每间房5晚 $1,950",
+                notes: ["KAYAK 的历史数据：这家12月均价约 $383/晚（11月最便宜约 $277）——和你们快照的 $390/晚基本一致，点链接看实时价。", "OUTRIGGER 的每日度假村费包含 Wi-Fi、电话和景点折扣，还有儿童免费早餐——具体金额请确认。", "停车另算；威基基酒店自停平均约 $45/晚。"] },
+              { id: "hhv", name: "Hilton Hawaiian Village", tier: "高档", nightly: 1990 / 5, unit: "room", fee: 59,
+                basis: "Expedia 10/18–19：每间房5晚 $1,990",
+                notes: ["威基基最大的度假村，有泻湖海滩。2026年指南列出度假村费约 $59/晚、自停车约 $75/晚。", "马拉松赛道在第5英里附近经过酒店——12/13 周日凌晨会有噪音和封路。"] },
+              { id: "moana", name: "Moana Surfrider", tier: "豪华", nightly: 2560 / 5, unit: "room", fee: 55,
+                basis: "Expedia 10/18–19：每间房5晚 $2,560",
+                notes: ["威基基最老的酒店（1901年），临海，正好在马拉松第6英里之后。", "用万豪积分订房也不免度假村费。"] },
+              { id: "banyan", name: "Waikiki Banyan 一卧公寓酒店（可住4人）", tier: "公寓", nightly: null, unit: "unit", editable: true, fee: 0,
+                basis: "我没有查到价格——不同房型价格不同，请在下面输入报价",
+                notes: ["一间卧室加沙发床（部分房型是两张大床加沙发床），厨房齐全；我查到的房源都含一个免费车位、没有度假村费。",
+                        "在钻石头方向、Kapiolani 公园/动物园/水族馆旁，也靠近马拉松终点；部分房源最少住3晚；到店要付 $300 押金；Koko Resorts 的房源页提到泳池曾因翻修关闭，订前确认。",
+                        "受管理的公寓酒店是威基基合法的“类民宿”选项。两人睡卧室、两人睡沙发床偏挤——想要真正的床位请找两卧房型。"] }
+            ]
+          },
+          V: {
+            title: "大岛 Big Island：火山村 Volcano Village", dates: "12月14–16日", nights: 2,
+            intro: "住2晚，白天看火山口，天黑后看火光。火山村海拔约3,700英尺，在雨林里，离公园入口约5分钟车程：凉爽潮湿，多是壁炉和热水浴缸，没有空调。",
+            options: [
+              { id: "vvrental", name: "火山村小屋或 B&amp;B（已登记的合法短租）", tier: "中档", nightly: null, unit: "unit", editable: true, fee: 0,
+                basis: "火山区短租均价约 $256/晚（2026年6月）；可在下方修改",
+                notes: ["当地攻略提到：Volcano Village Lodge（B&amp;B 套房，含早餐、壁炉）、Kīlauea Lodge（带餐厅的酒店）、Volcano Heritage Cottages（最多住5人，最少2晚）。",
+                        "多数小屋有完整厨房；村里只有一家杂货店和几家餐厅，建议订 Kīlauea Lodge 晚餐或自己做简餐。",
+                        "适用夏威夷县登记制度——向房东要登记号。"] },
+              { id: "volcanohouse", name: "Volcano House（公园内，火山口边缘）", tier: "高档", nightly: null, unit: "room", editable: true, fee: 0,
+                basis: "通常 $300–$500/晚/间；默认取中间值，可在下方修改",
+                notes: ["公园内唯一的酒店：33间客房和10间小木屋，没有电视和泳池，喷发间歇期在门廊能看到火山口的光。",
+                        "请在官网 hawaiivolcanohouse.com 直接订（Expedia 和 Booking 上没有）；旺季需提前3–6个月——离出发只有7周，能不能订到是风险。",
+                        "Kīlauea 游客中心翻修期间停车位有限（有临时服务中心）。"] }
+            ]
+          },
+          B: {
+            title: "大岛 Big Island：瓦科洛亚海岸 Waikoloa Coast", dates: "12月16–19日", nights: 3,
+            intro: "住3晚：海滩、海洋日和北科哈拉山谷。评论说到科纳机场约25–40分钟车程。下面的酒店价格是你们5晚 Expedia 报价除以5，实际3晚价格可能不同。",
+            options: [
+              { id: "paniolo", name: "Paniolo Greens（Waikoloa Village）", tier: "经济", nightly: 1011 / 5, unit: "unit", fee: 0,
+                basis: "Expedia 10/18–19：5晚 $1,011，这里按一整套两卧公寓计算",
+                notes: ["Waikoloa <b>Village</b> 是内陆的高尔夫社区——评论说开车去海滩要10–20分钟（Hāpuna 约20分钟）。不能走路到海边，这和“大量海边时间”冲突。",
+                        "安静，附近有超市。如果你们愿意每天开车去海滩，它最便宜。",
+                        "一套两卧公寓可能就够全家住。"] },
+              { id: "condo", name: "Waikoloa Beach Resort 度假区公寓/别墅（2–3卧）", tier: "公寓", nightly: null, unit: "unit", editable: true, fee: 0,
+                basis: "占位价 $300/晚；Kayak 显示瓦科洛亚公寓起价 $158–$495（日期未指定）",
+                notes: ["联排式公寓，在 Queens’ MarketPlace 和 Kings’ Shops 对面；到 A湾（Anaehoʻomalu Bay）步行约15分钟。厨房、洗烘一体机、床品和沙滩用品齐全。",
+                        "部分房源附送 Hilton Waikoloa 泳池通行证。别忘了一次性清洁费。",
+                        "最适合4个人和海滩时间。合规房源会标注夏威夷 TAT 税号和县登记号。"] },
+              { id: "hilton", name: "Hilton Waikoloa Village", tier: "中档", nightly: 1899 / 5, unit: "room", fee: 55,
+                basis: "Expedia 10/18–19：每间房5晚 $1,899",
+                notes: ["超大度假村：泻湖、小火车和船；园区内没有天然海滩（A湾在附近）。",
+                        "一位住客评论写停车自停 $48、代客 $55/晚；2023年一篇评测说停车加度假村费税后超过 $100/晚。"] },
+              { id: "marriott", name: "Waikoloa Beach Marriott", tier: "高档", nightly: 2171 / 5, unit: "room", fee: 50,
+                basis: "Expedia 10/18–19：每间房5晚 $2,171",
+                notes: ["临海，紧邻 A湾（平静、适合浮潜的海滩）。", "度假村费和停车费没有核实——订前确认。"] },
+              { id: "fairmont", name: "Fairmont Orchid（Mauna Lani，往北约15–20分钟）", tier: "豪华", nightly: 3046 / 5, unit: "room", fee: 50,
+                basis: "Expedia 10/18–19：每间房5晚 $3,046",
+                notes: ["科哈拉海岸的奢华选择；餐厅 Brown’s Beach House 是热门的“大餐”之选。", "度假村费和停车费没有核实。"] }
+            ]
+          }
+        };
+
+        /* ---------- v2: 预订链接 / 地址 ---------- */
+        var TRIP = { A: ["2026-12-09", "2026-12-14"], V: ["2026-12-14", "2026-12-16"], B: ["2026-12-16", "2026-12-19"] };
+        function gq(q) { return "https://www.google.com/search?q=" + encodeURIComponent(q); }
+        function mapLink(a) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(a); }
+        function linkA(label, url, main) { return '<a class="lk' + (main ? " main" : "") + '" href="' + url + '" target="_blank" rel="noopener">' + label + " ↗</a>"; }
+        function resolveUrl(u) { return u.indexOf("q:") === 0 ? gq(u.slice(2)) : u; }
+        function offLabel(u, base) { return u.indexOf("q:") === 0 ? "搜官网" : base; }
+        function lkExpedia(q, ci, co, rooms) { return "https://www.expedia.com/Hotel-Search?destination=" + encodeURIComponent(q) + "&startDate=" + ci + "&endDate=" + co + "&adults=4&rooms=" + rooms; }
+        function lkBooking(q, ci, co, rooms) { return "https://www.booking.com/searchresults.html?ss=" + encodeURIComponent(q) + "&checkin=" + ci + "&checkout=" + co + "&group_adults=4&no_rooms=" + rooms + "&group_children=0&selected_currency=USD"; }
+        function lkGoogleH(q, ci, co) { return "https://www.google.com/travel/hotels/" + encodeURIComponent(q) + "?q=" + encodeURIComponent(q) + "&checkin=" + ci + "&checkout=" + co + "&adults=4"; }
+        function lkVrbo(q, ci, co) { return "https://www.vrbo.com/search?destination=" + encodeURIComponent(q) + "&startDate=" + ci + "&endDate=" + co + "&adults=4"; }
+        function lkAirbnb(q, ci, co) { return "https://www.airbnb.com/s/" + encodeURIComponent(q) + "/homes?checkin=" + ci + "&checkout=" + co + "&adults=4"; }
+        var STAYINFO = {
+          ramada: { addr: "1830 Ala Moana Blvd, Honolulu, HI 96815", q: "Ramada Plaza Waikiki", off: "q:Ramada Plaza Waikiki official site" },
+          outrigger: { addr: "2300 Kalākaua Ave, Honolulu, HI 96815", q: "OUTRIGGER Waikiki Beachcomber", off: "https://www.outrigger.com/hawaii/oahu/outrigger-waikiki-beachcomber-hotel" },
+          hhv: { addr: "2005 Kālia Rd, Honolulu, HI 96815", q: "Hilton Hawaiian Village Waikiki Beach Resort", off: "q:Hilton Hawaiian Village Waikiki official site" },
+          moana: { addr: "2365 Kalākaua Ave, Honolulu, HI 96815", q: "Moana Surfrider A Westin Resort Waikiki", off: "q:Moana Surfrider Westin Resort official site" },
+          banyan: { addr: "201 ʻOhua Ave, Honolulu, HI 96815", q: "Waikiki Banyan Honolulu", unit: 1, off: "https://midwayvacations.com/search-by-building/waikiki-banyan/", offBase: "Midway Vacations（Banyan 房源）" },
+          vvrental: { addr: "Volcano Village, HI 96785（村内多家，见下方链接）", q: "Volcano Village, Hawaii", unit: 1,
+            extra: [["Volcano Village Lodge 官网", "https://volcanovillagelodge.com/"], ["Kīlauea Lodge 官网（19-3948 Old Volcano Rd）", "https://reservations.kilauealodge.com/kilauealodge/"], ["Volcano Heritage Cottages 官网", "https://volcanoheritagecottages.com/"]] },
+          volcanohouse: { addr: "1 Crater Rim Dr, Hawaiʻi National Park, HI 96718", off: "https://hawaiivolcanohouse.com/", offBase: "Volcano House 官网（只能官网订）", noOTA: 1 },
+          paniolo: { addr: "Waikoloa Village, HI 96738（内陆高尔夫社区）", q: "Paniolo Greens Waikoloa Village", unit: 1 },
+          condo: { addr: "Waikoloa Beach Resort, Waikoloa, HI 96738（Colony Villas、Beach Villas 等）", q: "Waikoloa Beach Resort, Hawaii", unit: 1,
+            extra: [["Waikoloa Colony Villas（度假区官网）", "https://www.waikoloabeachresort.com/big-island-accommodations/waikoloa-colony-villas/"], ["KBM Resorts（Colony Villas 直订）", "https://www.kbmresorts.com/resorts/230/waikoloa-colony-villas"]] },
+          hilton: { addr: "69-425 Waikoloa Beach Dr, Waikoloa, HI 96738", q: "Hilton Waikoloa Village", off: "q:Hilton Waikoloa Village official site" },
+          marriott: { addr: "69-275 Waikoloa Beach Dr, Waikoloa, HI 96738", q: "Waikoloa Beach Marriott Resort & Spa", off: "q:Waikoloa Beach Marriott official site" },
+          fairmont: { addr: "1 N Kaniku Dr, Kohala Coast, HI 96743", q: "Fairmont Orchid Hawaii", off: "q:Fairmont Orchid Hawaii official site" }
+        };
+        function stayAddr(id) {
+          var inf = STAYINFO[id]; if (!inf) return "";
+          return '<div class="addr">地址 Address：<a href="' + mapLink(inf.addr) + '" target="_blank" rel="noopener">' + inf.addr + "</a></div>";
+        }
+        function stayLinks(key, id) {
+          var inf = STAYINFO[id]; if (!inf) return "";
+          var ci = TRIP[key][0], co = TRIP[key][1], h = "";
+          if (inf.off) h += linkA(offLabel(inf.off, inf.offBase || "官网订房"), resolveUrl(inf.off), true);
+          (inf.extra || []).forEach(function (x) { h += linkA(x[0], x[1], true); });
+          if (!inf.noOTA && inf.q) {
+            var rooms = inf.unit ? 1 : PLAN.rooms;
+            if (inf.unit) { h += linkA("Vrbo 搜索", lkVrbo(inf.q, ci, co)) + linkA("Airbnb 搜索", lkAirbnb(inf.q, ci, co)) + linkA("Booking 搜索", lkBooking(inf.q, ci, co, 1)); }
+            else { h += linkA("Expedia 搜索", lkExpedia(inf.q, ci, co, rooms)) + linkA("Booking 搜索", lkBooking(inf.q, ci, co, rooms)) + linkA("Google Hotels", lkGoogleH(inf.q, ci, co)); }
+          }
+          return h;
+        }
+        function ownerNameOf(ref) {
+          for (var i = 0; i < TASKS.length; i++) if (TASKS[i].ref === ref) return ownerName(TASKS[i].o);
+          return null;
+        }
+        function refreshOwners() {
+          var els = document.querySelectorAll("[data-own]");
+          for (var i = 0; i < els.length; i++) {
+            var n = ownerNameOf(els[i].getAttribute("data-own"));
+            if (n === null) els[i].style.display = "none"; else { els[i].style.display = ""; els[i].textContent = "负责人：" + n; }
+          }
+        }
+
+        function stayOpt(key) { return byId(STAYS[key].options, PLAN.stay[key]); }
+        function stayNightly(o) { return o.editable ? (PLAN.nightly[o.id] || 0) : o.nightly; }
+        function stayUnits(o) { return o.unit === "room" ? PLAN.rooms : 1; }
+        function stayFee(o) { return (PLAN.fees && o.fee) ? o.fee : 0; }
+        function optTotal(key, o) { return STAYS[key].nights * (stayNightly(o) + stayFee(o)) * stayUnits(o); }
+        function stayTotal(key) { return optTotal(key, stayOpt(key)); }
+
+        function renderStays() {
+          var html = "";
+          ["A", "V", "B"].forEach(function (key) {
+            var g = STAYS[key];
+            html += '<section class="stay-group" data-group="' + key + '"><h3>' + g.title + '<span class="owner" data-own="stay:' + key + '"></span></h3>' +
+              '<p class="meta"><b>' + g.dates + ' · ' + g.nights + '晚。</b>' + g.intro + '</p><div class="opts">';
+            g.options.forEach(function (o) {
+              var sel = PLAN.stay[key] === o.id;
+              html += '<label class="opt' + (sel ? " selected" : "") + '" data-opt="' + o.id + '">' +
+                '<input type="radio" name="stay-' + key + '" value="' + o.id + '"' + (sel ? " checked" : "") + ' />' +
+                '<div><div class="nm">' + o.name + '<span class="badge">' + o.tier + '</span></div>' +
+                '<div class="basis">' + o.basis + '</div>' +
+                '<ul>' + o.notes.map(function (n) { return "<li>" + n + "</li>"; }).join("") + '</ul>' + stayAddr(o.id) + '<div class="links" data-links="' + o.id + '"></div>' +
+                (o.editable ? '<div class="edit"><span>你的报价，每' + (o.unit === "room" ? "间房" : "套") + '每晚 $</span><input type="number" min="0" step="10" data-edit="' + o.id + '" value="' + (PLAN.nightly[o.id] || "") + '" placeholder="0" aria-label="' + plain(o.name) + ' 每晚价格" /></div>' : "") +
+                '</div><div class="price" data-price="' + o.id + '"></div></label>';
+            });
+            html += "</div></section>";
+          });
+          $("stayGroups").innerHTML = html;
+          updateStays();
+        }
+
+        function updateStays() {
+          ["A", "V", "B"].forEach(function (key) {
+            var g = STAYS[key];
+            g.options.forEach(function (o) {
+              var lk = document.querySelector('[data-links="' + o.id + '"]'); if (lk) lk.innerHTML = stayLinks(key, o.id);
+              var el = document.querySelector('[data-price="' + o.id + '"]');
+              if (!el) return;
+              var nightly = stayNightly(o);
+              if (!nightly) { el.innerHTML = "&mdash;<small>请输入报价</small>"; return; }
+              var units = stayUnits(o), fee = stayFee(o);
+              el.innerHTML = money(optTotal(key, o)) + "<small>" + money(nightly + fee) + "/晚" +
+                (units > 1 ? " × " + units + "间" : (o.unit === "unit" ? "/套" : "")) + " × " + g.nights + "晚</small>";
+            });
+            var grp = document.querySelector('[data-group="' + key + '"]');
+            if (grp) {
+              var labels = grp.querySelectorAll(".opt");
+              for (var i = 0; i < labels.length; i++) labels[i].classList.toggle("selected", labels[i].getAttribute("data-opt") === PLAN.stay[key]);
+            }
+          });
+        }
+
+        function selectStay(key, id) {
+          PLAN.stay[key] = id;
+          var grp = document.querySelector('[data-group="' + key + '"]');
+          var radios = grp.querySelectorAll('input[type="radio"]');
+          for (var i = 0; i < radios.length; i++) radios[i].checked = radios[i].value === id;
+          updateStays(); updateBudget();
+        }
+        $("stayGroups").addEventListener("change", function (e) {
+          if (e.target.type === "radio") selectStay(e.target.name.replace("stay-", ""), e.target.value);
+        });
+        $("stayGroups").addEventListener("input", function (e) {
+          var id = e.target.getAttribute("data-edit");
+          if (!id) return;
+          var n = parseFloat(e.target.value);
+          PLAN.nightly[id] = isNaN(n) || n < 0 ? 0 : n;
+          var key = e.target.closest(".stay-group").getAttribute("data-group");
+          if (PLAN.stay[key] !== id) selectStay(key, id); else { updateStays(); updateBudget(); }
+        });
+        $("segStayRooms").addEventListener("click", function (e) {
+          var b = e.target.closest("button"); if (!b) return;
+          PLAN.rooms = parseInt(b.getAttribute("data-v"), 10);
+          var bs = this.querySelectorAll("button");
+          for (var i = 0; i < bs.length; i++) bs[i].setAttribute("aria-pressed", bs[i] === b ? "true" : "false");
+          updateStays(); updateBudget();
+        });
+        $("chkFees").addEventListener("change", function () { PLAN.fees = this.checked; updateStays(); updateBudget(); });
+
+        /* ---------- 活动 ---------- */
+        var ACTS = [
+          { id: "diamond", island: "Oahu", name: "钻石头山（Diamond Head）火山口徒步", when: "周四 12/10 · 8:00 预约时段",
+            mode: "pp", on: true, qty: 4, opt: 0, tags: ["需预约"],
+            desc: "往返约1.6英里（1.5–2小时），能看到威基基海岸线的最佳视角。非本地居民需要州立公园预约；费用不高但可能变动，订的时候确认。",
+            opts: [{ l: "州立公园预约", pp: 5, best: true, note: "占位价：约 $5/人，自驾另加约 $10/车。建议从威基基打车或坐公交去。", src: "Hawaii State Parks，经 Hawaii Guide，2026" }],
+            best: "只有一种进入方式——州立公园预约。打车或坐公交可以省下停车费。", free: "" },
+          { id: "hanauma", island: "Oahu", name: "恐龙湾（Hanauma Bay）浮潜", when: "周六 12/12 · 8:00 时段",
+            mode: "pp", on: true, qty: 4, opt: 0, tags: ["需预约", "周一、周二关闭"],
+            desc: "受保护的火山口海湾，浅水珊瑚礁——瓦胡岛最平静、最容易的浮潜点。分时段入场，要看一段几分钟的保护视频，停车位有限。面罩和脚蹼可现场租。",
+            opts: [{ l: "门票（13岁以上；12岁及以下免费）", pp: 25, best: true, note: "另加网络服务费；非本地居民停车 $3 现金，不保证有位。门票提前2天夏威夷时间早上7点放出（12/12 的票：12/10 周四）。海湾8月3–18日因下水道工程关闭——请确认已开放。", src: "檀香山市政府；Hawaii Guide，2026年8月" }],
+            best: "只有官方一种票；带接送的团费用更高，但省停车麻烦。", free: "替代：大岛的 A湾可以免费浮潜。" },
+          { id: "surf", island: "Oahu", name: "威基基冲浪课 Waikiki Surf Lesson（团体）", when: "周日 12/13 · 约11:00（请确认：马拉松赛道沿 Kalākaua 大道）",
+            mode: "pp", on: true, qty: 4, opt: 1, metric: "hr", tags: ["提前1–2周订"],
+            desc: "威基基的浪又长又软，是夏威夷最适合学冲浪的地方；冬季北岸浪更大，但威基基仍适合初学者。含板、脚绳和教学。注意年龄限制——部分学校要求年纪较小的孩子订私教。",
+            opts: [
+              { l: "Kahu Surfing School：1小时团体课", pp: 70, mins: 60, note: "标价最低，但只有1小时；GoPro 视频另加 $60。", src: "kahusurfingschool.com，2025年11月" },
+              { l: "Faith Surf School：2小时团体课", pp: 105, mins: 120, best: true, note: "在 Kalākaua 大道 Duke Kahanamoku 雕像旁。", src: "Hawaii Guide，2026年5月" },
+              { l: "Waikiki Beach Activities（Hilton Hawaiian Village）：2小时团体课", pp: 110, mins: 120, note: "每天9点、11点、1点、3点；11岁以上，必须会游泳。", src: "waikikibeachactivities.com" },
+              { l: "Big Wave Dave：1.5小时团体课（3–5人）", pp: 129, mins: 90, note: "小班。", src: "bigwavedave.com" }
+            ],
+            best: "Faith Surf School：2小时约 $105，每小时单价最划算。Kahu 的 $70 只有在1小时够用时才占优。", free: "" },
+          { id: "kualoa", island: "Oahu", name: "Kualoa 牧场：Kaʻaʻawa“侏罗纪”山谷", when: "周五 12/11 · 约13:30",
+            mode: "pp", on: true, qty: 4, opt: 0, tags: ["需预约"],
+            desc: "东岸一座4,000英亩的私人山谷，只能参加团游进入：Koʻolau 山脊、800年历史的古渔池和 Mokoliʻi 岛。离威基基约45分钟；免费停车。",
+            opts: [
+              { l: "Movie Sites 电影取景地巴士团（90分钟）", pp: 59.95, best: true, note: "最轻松，各年龄都行；不费力就能看山谷景色。", src: "Hawaii Guide，2026" },
+              { l: "Jungle Expedition 丛林越野（90分钟）", pp: 59.95, note: "更颠簸的敞篷车，进入雨林小路。", src: "Hawaii Guide，2026" },
+              { l: "半日套餐：Movie Sites + Ocean Voyage 双体船 + 午餐", pp: 124.95, note: "比分开买两个团只多约 $5，还含午餐。", src: "Hawaii Guide，2026" },
+              { l: "Jurassic Adventure（2.5小时）", pp: 149.95, note: "小车，深入三个山谷。", src: "Wanderlustyle，2026年6月" }
+            ],
+            best: "Movie Sites $59.95 是进山谷最便宜的方式；想再加双体船和午餐，半日套餐更划算。",
+            free: "替代：公路对面的 Kualoa Regional Park 免费停车，也能看到山谷。" },
+          { id: "scenic", island: "Oahu", name: "免费风景点：Pali 瞭望台、Kailua/Lanikai、Halona、Waimānalo", when: "周五 12/11 与 周六 12/12",
+            mode: "group", on: true, opt: 0, tags: [],
+            desc: "风景就在路上：俯瞰东岸悬崖的 Nuʻuanu Pali 瞭望台、Kailua 和 Lanikai 海滩、Halona 喷水洞，还有 Waimānalo 又长又安静的沙滩。只在周五、周六需要车。",
+            opts: [{ l: "免费（只有停车费）", pp: 0, best: true, note: "租车费用在下面的“机票、租车与餐饮”里。", src: "" }],
+            best: "免费。", free: "" },
+
+          { id: "hvnp", island: "Big Island", name: "夏威夷火山国家公园（基拉韦厄（Kīlauea））", when: "周一 12/14 下午 – 周二 12/15",
+            mode: "group", on: true, opt: 0, tags: ["每天查状态"],
+            desc: "火山口边缘观景台、蒸汽口、Thurston 熔岩洞，以及通往海拱的 Chain of Craters 公路。喷发区域禁止游客进入，所以即使喷发期间你也只能在火山口边缘远观；天黑后火光最明显。别指望看到喷泉——最近几次喷发只持续几小时，间歇期很难预测。",
+            opts: [{ l: "公园入园费（每车，7天有效）", pp: 30, best: true, note: "每车 $30。Kīlauea 游客中心翻修到2026年底；临时服务中心每天开放。", src: "Volcano House；Love Big Island，2026" }],
+            best: "一次 $30 覆盖两天。", free: "夜间看火光除了入园费不另收费。" },
+          { id: "waipio", island: "Big Island", name: "怀皮奥山谷（Waipiʻo Valley）", when: "周三 12/16 · 约13:00",
+            mode: "pp", on: true, qty: 4, opt: 0, tags: [],
+            desc: "岛上最壮观的山谷：芋头田、黑沙滩和海崖。下谷的路自2022年起不对游客开放，也不能步行；只有持许可的接驳车能到谷底。瞭望台免费，能看到大部分景观，但看不到瀑布。",
+            opts: [
+              { l: "瞭望台（免费，无需预约）", pp: 0, best: true, note: "路尽头有洗手间和野餐区；周末上午停车场会满。", src: "Love Big Island，2026年8月" },
+              { l: "怀皮奥山谷接驳车：下到谷底，约90分钟", pp: 75, note: "12岁以上；3–11岁 $41；据其官网周一至周六整点发车（12/16 是周三，可订）。", src: "Love Big Island，2026年8月" }
+            ],
+            best: "免费瞭望台能看到大部分景观；接驳车是唯一合法下谷的方式。", free: "" },
+          { id: "pololu", island: "Big Island", name: "Polulū（波罗吕）山谷瞭望台与黑沙滩", when: "周五 12/18 · 8:00",
+            mode: "group", on: true, opt: 0, tags: [],
+            desc: "北科哈拉公路的尽头：海崖、木麻黄林和黑沙滩。下到谷底的步道0.6英里，落差约420英尺——预留2–3小时；雨后湿滑。海里不能游泳，瞭望台没有洗手间。冬季这里也是岸上看座头鲸的好位置。",
+            opts: [{ l: "免费", pp: 0, best: true, note: "免费停车；晴天早上车位会满——9点前到。", src: "Love Big Island，2026年8月" }],
+            best: "免费，也是你们能靠双脚走到的最好的山谷。", free: "" },
+          { id: "manta", island: "Big Island", name: "蝠鲼（Manta Ray）夜间浮潜", when: "周四 12/17 · 日落出发",
+            mode: "pp", on: true, qty: 4, opt: 0, tags: ["需预约"],
+            desc: "科纳的常驻礁蝠鲼会被灯光吸引来的浮游生物吸引过来，你漂在水面上30–45分钟。常见价格 $99–$170；另加7–10%港口费和税，以及15–20%小费。带毛巾和保暖衣物；容易晕船的话先吃晕船药。",
+            opts: [
+              { l: "Kona Snorkel Trips：Honokōhau 港，最多18人", pp: 99, best: true, note: "儿童 $89；据其官网，没看到蝠鲼可免费补乘。", src: "konasnorkeltrips.com，2026年8–9月" },
+              { l: "Dolphin Discoveries：Keauhou 湾", pp: 99.99, note: "共2小时；含潜水衣上衣和装备。Keauhou 离瓦科洛亚更远。", src: "dolphindiscoveries.com，2026年9月" },
+              { l: "Torpedo Tours：Honokōhau，最多18人，可浮潜或潜水", pp: 129, note: "含潜水衣、面镜、脚蹼和浮板；持证潜水员 $159。", src: "Love Hawaiʻi Guides，2026年9月" },
+              { l: "Manta Ray Night Snorkel Hawaii：每晚两班", pp: 139, note: "只限会游泳的人，5岁以上。", src: "商家指南，2026年1月" }
+            ],
+            best: "Kona Snorkel Trips 约 $99，是离瓦科洛亚较近的 Honokōhau 港里小团价格最好的；想要更宽松的空间，就升级到 Torpedo 的 $129。", free: "" },
+          { id: "scuba", island: "Big Island", name: "科纳水肺潜水 Kona Scuba Diving", when: "周四 12/17 · 8:30 出船",
+            mode: "pp", on: true, qty: 2, opt: 2, tags: ["需预约", "这是最后一潜（离12/19航班40小时以上）"],
+            desc: "科纳的熔岩拱门和熔岩洞是夏威夷最好的潜点之一；冬季水温约74°F。持证潜水员可以订船潜；初学者先上 Discover Scuba 体验课（深度上限40英尺）。下面默认是2人按保守的体验课价格估算——请按谁有证来调整选项和人数。岛上没有加压舱。",
+            opts: [
+              { l: "持证：两瓶船潜（起价）", pp: 169, best: true, note: "自带装备的话，Puakō 和 Two-Step 的岸潜入口免费。", src: "Love Big Island，2026年8月" },
+              { l: "持证：Jack’s Classic 两瓶一日船潜", pp: 200, note: "5.5小时；各水平适用。", src: "Love Big Island，2026年8月" },
+              { l: "无证：Discover Scuba 泳池+岸潜（Jack’s）", pp: 325, note: "10岁以上；每位教练2名学员。", src: "jacksdivinglocker.com" },
+              { l: "无证：Discover Scuba 两瓶船潜（Kona Honu）", pp: 449, note: "18岁以上；2:1配比；需先上线学理论。", src: "bigislandactivities.com，2026年3月" },
+              { l: "潜水船上的浮潜位（估算）", pp: 115, note: "潜水船的浮潜位通常比潜水员价低 $40–$70；按 $169 估算。", src: "据 Love Big Island，2026年8月推算" }
+            ],
+            best: "有证：约 $169 一次两瓶船潜。无证：Jack’s 泳池+岸潜体验课 $325 是我找到的最便宜的带教选项。无证的人不能参加蝠鲼夜间“潜水”，只能参加浮潜。", free: "" },
+          { id: "mk", island: "Big Island", name: "冒纳凯阿山（Mauna Kea）山顶日落观星", when: "可选 · 现已不建议（见每日行程）",
+            mode: "pp", on: false, qty: 4, opt: 0, tags: ["可选", "13岁以上", "潜水后24小时内禁止"],
+            desc: "山顶海拔13,796英尺；游客站以上的路只能四驱，日落后30分钟关闭，所以多数人选团（7–9小时，含羽绒外套和望远镜）。13岁以下儿童不能上到游客站以上。12月到3月冰雪可能取消团。因为12/19要赶早班机，山顶团晚上10点后才回到住处，所以不建议安排。",
+            opts: [
+              { l: "Hawaii Island Holidays：山顶日落+观星", pp: 289, best: true, note: "10月17日起价 $289；集合点 Kona Commons、Queens’ MarketPlace（瓦科洛亚）或游客站；开始前24小时可免费取消。", src: "maunakea-stargazingtours.com，2026年10月" },
+              { l: "Hawaii Forest &amp; Trail：Summit &amp; Stars", pp: 315, note: "含晚餐、羽绒外套、11英寸望远镜；8–9小时；从科纳和部分瓦科洛亚度假村接送。", src: "Love Hawaiʻi Guides，2026年5月" },
+              { l: "自驾：9,200英尺的 Visitor Information Station（免费）", pp: 0, note: "普通车能开上去；每天9:00–21:00开放；约每月一次的免费望远镜之夜需预约。", src: "UH Hilo，2026年8月" }
+            ],
+            best: "免费的游客站就能看星星；我找到的最便宜的带团价是 $289。", free: "替代：晚餐后开车去游客站——但潜水后24小时内不要去。" },
+          { id: "heli", island: "Big Island", name: "直升机观光（山谷或火山）", when: "可选 · 周二 12/15（火山）或 周五 12/18（山谷）",
+            mode: "pp", on: false, qty: 4, opt: 2, metric: "min", tags: ["可选", "问清潜水后要等多久"],
+            desc: "这是近距离看科哈拉7个无路山谷和 Hāmākua 瀑布的唯一方式，也是从另一个角度看 Kīlauea。下面是每人价格；飞行取决于天气。请问运营商潜水后要等多久才能飞。12/18 的上午飞要在12/17 最后一潜之后至少24小时再说。",
+            opts: [
+              { l: "Safari Helicopters：希洛出发的火山航线，55分钟（仅工作日）", pp: 349, mins: 55, note: "无门；周末不飞；48小时取消规则。12/15 是周二。", src: "Love Big Island，2026年9月" },
+              { l: "科纳地区1小时观光（起价）", pp: 399, mins: 60, note: "火山或科哈拉航线不同；可选无门。", src: "Helicopter Thrills，2026年4月" },
+              { l: "Blue Hawaiian：Waikoloa 出发的 Kohala Coast Adventure，50分钟", pp: 439, mins: 50, best: true, note: "怀皮奥山谷和海崖瀑布；六座共乘直升机。", src: "LeaLea 的 Blue Hawaiian 列表" },
+              { l: "Blue Hawaiian：Big Island Spectacular，1小时45分", pp: 760, mins: 105, note: "科哈拉、怀皮奥、Hāmākua 瀑布和 Kīlauea；运营商指南写起价 $719，转售页写 $760。", src: "Love Big Island；LeaLea" }
+            ],
+            best: "每分钟最便宜的是 Safari 的 $349 火山航线（约 $6.35/分钟）。要看山谷和瀑布，Blue Hawaiian 的50分钟 Kohala 航线更贴合你们的风景需求。两者都是大额消费：4人约 $1,400–$1,750。", free: "替代：12/16 的 Waipiʻo 瞭望台和 12/18 的 Polulū，能在地面看到同样的山谷。" },
+          { id: "beach", island: "Big Island", name: "海边时间 Beach Time：A湾 ʻAnaehoʻomalu Bay、Hāpuna、Kua Bay", when: "12/16、12/17、12/18 下午",
+            mode: "group", on: true, opt: 0, tags: [],
+            desc: "A湾水面平静，从瓦科洛亚度假区步行可达，可浮潜、租装备。Hāpuna 是一条长长的白沙滩；它的 Waialea 区在风暴关闭后原定10月17日重新开放——请确认。",
+            opts: [{ l: "免费（州立公园可能收停车费）", pp: 0, best: true, note: "", src: "州立公园通知，2026年8月；Wai Pacific" }],
+            best: "免费。", free: "" }
+        ];
+
+        var ACTINFO = {
+          diamond: { addr: "Diamond Head State Monument, Diamond Head Rd, Honolulu, HI 96815", u: ["https://gostateparks.hawaii.gov/diamondhead/"] },
+          hanauma: { addr: "100 Hanauma Bay Rd, Honolulu, HI 96825", u: ["https://web5.hnl.info/pros-ticketing/event/hbay-online-reservation"] },
+          surf: { addr: "Faith Surf School：2335 Kalākaua Ave, Honolulu, HI 96815（Outrigger Waikiki Beach Resort 前）", u: ["https://kahusurfingschool.com/", "https://faithsurfschool.com/surf-lessons/", "https://waikikibeachactivities.com/", "https://bigwavedave.com/"] },
+          kualoa: { addr: "Kualoa Ranch, 49-560 Kamehameha Hwy, Kaneʻohe, HI 96744", u: ["https://www.kualoa.com/", "https://www.kualoa.com/", "https://www.kualoa.com/", "https://www.kualoa.com/"] },
+          scenic: { addr: "Nuʻuanu Pali Lookout, 61 Nuʻuanu Pali Dr, Honolulu, HI 96817", u: [] },
+          hvnp: { addr: "Hawaiʻi Volcanoes National Park, 1 Crater Rim Dr, Hawaiʻi National Park, HI 96718", u: ["https://www.nps.gov/havo/"] },
+          waipio: { addr: "瞭望台 Lookout：Waipiʻo Valley Rd 尽头, Honokaʻa, HI 96727；接驳车 Shuttle：48-5304 Honokaʻa-Waipiʻo Rd, Honokaʻa, HI 96727", u: ["", "https://www.waipiovalleyshuttle.com/"] },
+          pololu: { addr: "Polulū Valley Lookout, Akoni Pule Hwy (HI-270) 尽头, Kapaʻau, HI 96755", u: [] },
+          manta: { addr: "Honokōhau Harbor, 74-381 Kealakehe Pkwy, Kailua-Kona, HI 96740", u: ["https://konasnorkeltrips.com/", "https://dolphindiscoveries.com/", "q:Torpedo Tours Kona manta ray night snorkel", "q:Manta Ray Night Snorkel Hawaii Kona book"] },
+          scuba: { addr: "Honokōhau Harbor, 74-381 Kealakehe Pkwy, Kailua-Kona, HI 96740（Jack’s Diving Locker 店：75-5813 Aliʻi Dr, Kailua-Kona, HI 96740）", u: ["q:Kona two tank boat dive certified diver book", "https://jacksdivinglocker.com/", "https://jacksdivinglocker.com/", "q:Kona Honu Divers Discover Scuba", ""] },
+          mk: { addr: "Mauna Kea Visitor Information Station, Mauna Kea Access Rd, Hawaiʻi Island, HI", u: ["https://maunakea-stargazingtours.com/", "https://www.hawaii-forest.com/", "q:UH Hilo Mauna Kea visitor information station stargazing"] },
+          heli: { addr: "Blue Hawaiian：Waikoloa Heliport, Waikoloa Beach Dr；Safari：Hilo International Airport (ITO)", u: ["q:Safari Helicopters Hilo volcano tour book", "q:Helicopter Thrills Kona tour", "q:Blue Hawaiian Waikoloa Kohala Coast Adventure book", "q:Blue Hawaiian Big Island Spectacular book"] },
+          beach: { addr: "ʻAnaehoʻomalu Bay (A-Bay), Waikoloa, HI 96738；Hāpuna Beach State Recreation Area, 62-100 Kauna‘oa Dr, Kamuela, HI 96743", u: [] }
+        };
+        function actLink(id, i) {
+          var inf = ACTINFO[id]; if (!inf || !inf.u[i]) return "";
+          return " " + linkA(inf.u[i].indexOf("q:") === 0 ? "搜官网" : "预订/官网", resolveUrl(inf.u[i]), true);
+        }
+        function actCost(a) {
+          if (!a.on) return 0;
+          var o = a.opts[a.opt];
+          return a.mode === "group" ? o.pp : o.pp * a.qty;
+        }
+        function metricText(a, o) {
+          if (!o.mins || !a.metric) return "";
+          if (a.metric === "min") return " · " + m2(o.pp / o.mins) + "/分钟";
+          if (a.metric === "hr") return " · " + m2(o.pp / (o.mins / 60)) + "/小时";
+          return "";
+        }
+        function actCard(a) {
+          var sel = a.opts.map(function (o, i) {
+            return '<option value="' + i + '"' + (i === a.opt ? " selected" : "") + ">" + plain(o.l) + " — " + (o.pp === 0 ? "免费" : m2(o.pp)) + "</option>";
+          }).join("");
+          var qtySel = "";
+          if (a.mode === "pp") {
+            qtySel = '<label>人数 <select class="act-qty">';
+            for (var q = 0; q <= 4; q++) qtySel += '<option value="' + q + '"' + (q === a.qty ? " selected" : "") + ">" + q + "</option>";
+            qtySel += "</select></label>";
+          }
+          var rows = a.opts.map(function (o, i) {
+            return '<tr data-i="' + i + '"><td>' + o.l + actLink(a.id, i) + (o.best ? ' <span class="badge good">性价比最高</span>' : "") + (o.note ? '<br><span class="src">' + o.note + "</span>" : "") +
+              '</td><td class="p">' + (o.pp === 0 ? "免费" : m2(o.pp)) + metricText(a, o) + '</td><td class="src">' + o.src + "</td></tr>";
+          }).join("");
+          return '<article class="act" data-act="' + a.id + '">' +
+            '<div class="act-head"><label class="chk"><input type="checkbox" class="act-on"' + (a.on ? " checked" : "") + ' /><span><span class="nm">' + a.name +
+            '</span><span class="isl ' + (a.island === "Oahu" ? "oahu" : "big") + '">' + (a.island === "Oahu" ? "瓦胡岛 Oʻahu" : "大岛 Big Island") + '</span></span></label>' +
+            '<div class="act-cost"></div></div>' +
+            '<div class="act-meta"><span class="owner" data-own="act:' + a.id + '"></span>' + a.when + (a.tags.length ? " · " + a.tags.join(" · ") : "") + (ACTINFO[a.id] ? '<div class="addr">地址 Address：<a href="' + mapLink(ACTINFO[a.id].addr) + '" target="_blank" rel="noopener">' + ACTINFO[a.id].addr + "</a></div>" : "") + "</div>" +
+            '<p class="desc">' + a.desc + "</p>" +
+            '<div class="act-ctl"><label>选项 <select class="act-opt">' + sel + "</select></label>" + qtySel + "</div>" +
+            '<table class="optt"><tr><th>选项与说明</th><th>价格（成人）</th><th>来源</th></tr>' + rows + "</table>" +
+            '<p class="best"><b>性价比最高：</b>' + a.best + "</p>" + (a.free ? '<p class="free">' + a.free + "</p>" : "") + "</article>";
+        }
+        function renderActs() {
+          var html = "";
+          ACTS.forEach(function (a) {
+            var show = true, f = PLAN.filter;
+            if (f === "oahu") show = a.island === "Oahu";
+            else if (f === "big") show = a.island === "Big Island";
+            else if (f === "free") show = a.opts.some(function (o) { return o.pp === 0; });
+            else if (f === "on") show = a.on;
+            if (show) html += actCard(a);
+          });
+          $("actList").innerHTML = html || '<p class="sec-p">这里还没有内容——勾选一个活动把它加进计划。</p>';
+          updateActs(); refreshOwners();
+        }
+        function updateActs() {
+          var cards = document.querySelectorAll("#actList .act");
+          for (var i = 0; i < cards.length; i++) {
+            var a = byId(ACTS, cards[i].getAttribute("data-act"));
+            cards[i].classList.toggle("off", !a.on);
+            var cost = actCost(a), cc = cards[i].querySelector(".act-cost");
+            if (!a.on) cc.innerHTML = "未加入计划";
+            else if (cost === 0) cc.innerHTML = "免费";
+            else cc.innerHTML = m2(cost) + "<small>" + (a.mode === "group" ? "每车" : a.qty + "人") + "</small>";
+            var trs = cards[i].querySelectorAll("table.optt tr[data-i]");
+            for (var j = 0; j < trs.length; j++) trs[j].classList.toggle("sel", parseInt(trs[j].getAttribute("data-i"), 10) === a.opt);
+          }
+        }
+        $("actList").addEventListener("change", function (e) {
+          var card = e.target.closest(".act"); if (!card) return;
+          var a = byId(ACTS, card.getAttribute("data-act"));
+          if (e.target.classList.contains("act-on")) a.on = e.target.checked;
+          else if (e.target.classList.contains("act-opt")) { a.opt = parseInt(e.target.value, 10); if (!a.on) { a.on = true; card.querySelector(".act-on").checked = true; } }
+          else if (e.target.classList.contains("act-qty")) a.qty = parseInt(e.target.value, 10);
+          updateActs(); updateBudget();
+        });
+        $("segActFilter").addEventListener("click", function (e) {
+          var b = e.target.closest("button"); if (!b) return;
+          PLAN.filter = b.getAttribute("data-v");
+          var bs = this.querySelectorAll("button");
+          for (var i = 0; i < bs.length; i++) bs[i].setAttribute("aria-pressed", bs[i] === b ? "true" : "false");
+          renderActs();
+        });
+        function numIn(id, key) {
+          $(id).addEventListener("input", function () {
+            var n = parseFloat(this.value);
+            PLAN[key] = isNaN(n) || n < 0 ? 0 : n;
+            updateBudget();
+          });
+        }
+        numIn("xFlights", "flights"); numIn("xInter", "inter"); numIn("xCar", "car"); numIn("xOahuCar", "oahuCar"); numIn("xFood", "food");
+
+        /* ---------- 每日行程 ---------- */
+        var DAYS = [
+          { date: "周三 12/9", island: "Oahu", title: "抵达檀香山（Honolulu），安顿，威基基（Waikiki）日落",
+            pace: "轻松", paceCls: "", beach: "约0.5小时", drive: "不用车", book: [],
+            items: [
+              ["2:47 pm", "抵达檀香山（Honolulu, HNL）", "ORD 9:35am 起飞，2:47pm 落地。取行李后去威基基：接驳车约 $9–$15/人，出租车约 $30–$60。西雅图的家人另行抵达——约好碰面的地点。"],
+              ["4:30 pm", "入住并休息", "标准入住时间是 3 pm；航班延误的话提前告诉酒店。"],
+              ["5:30 pm", "威基基海滩（Waikiki Beach）日落散步", "12月中旬日落约 5:50 pm。"],
+              ["6:30 pm", "简单晚餐，早睡", "酒店附近的 poke 或 plate lunch。体内时钟比芝加哥慢4小时（西雅图2小时）。"]
+            ],
+            swap: "提醒：12/12 的恐龙湾（Hanauma Bay）门票在 12/10 周四夏威夷时间早上7:00 放出。" },
+          { date: "周四 12/10", island: "Oahu", title: "钻石头山（Diamond Head）（威基基（Waikiki）旁的死火山口）+ Kapahulu 美食",
+            pace: "轻松", paceCls: "", beach: "约3小时", drive: "不用车", book: ["钻石头山（Diamond Head）预约"],
+            items: [
+              ["7:15 am", "简单早餐，打车去钻石头山（Diamond Head）", "从威基基（Waikiki）打车约15–20分钟。"],
+              ["8:00 am", "钻石头山（Diamond Head）火山口徒步（死火山口，山顶可俯瞰威基基全景）", "往返约1.6英里，加拍照约1.5–2小时；威基基海岸线的最佳视角。带水。", "约 $5/人（请确认）"],
+              ["10:30 am", "Kapahulu 美食站", "Leonard’s Bakery 现炸马拉萨达（malasada）（约 $1.50/个），Rainbow Drive-In 的 plate lunch（loco moco 约 $11；下午2–4点人最少）。也可以去 Ono Seafood 吃 poke，下午早早就卖完。"],
+              ["12:30 pm", "海边下午（Beach time）", "游泳、午睡、吃刨冰（shave ice）。Waiola Shave Ice 只收现金。"],
+              ["5:50 pm", "日落（Sunset）+ 海边简餐", ""]
+            ],
+            swap: "下雨：把海滩时间挪到傍晚，或去 Ala Moana Center 逛逛。" },
+          { date: "周五 12/11", island: "Oahu", title: "东岸山谷与海岸：Kualoa",
+            pace: "适中", paceCls: "", beach: "约2小时", drive: "开车约3小时", book: ["Kualoa 团", "租车（周五–周六）"],
+            items: [
+              ["8:00 am", "在威基基（Waikiki）取租来的车", "只租周五到周六。去年冬天檀香山（Honolulu）最便宜车型均价约 $62/天；酒店停车约 $45/晚（Waikiki Banyan 免费）。"],
+              ["8:30 am", "Nuʻuanu Pali 瞭望台（Lookout）", "风很大的悬崖观景台，俯瞰东岸；离威基基约25分钟。停留20–30分钟。"],
+              ["9:45 am", "Kailua 海滩（Beach）或 Lanikai", "在 Kailua 吃早餐或咖啡，然后在软沙和碧蓝海水里待1.5–2小时。Lanikai 车位很紧。"],
+              ["12:00 pm", "沿海岸北上；午餐 Waiahole Poi Factory", "去 Kualoa 的路上吃 laulau 和卡鲁瓦猪肉（先查营业时间）。"],
+              ["1:30 pm", "Kualoa 牧场：Movie Sites 巴士团（90分钟）", "Kaʻaʻawa Valley（《侏罗纪公园》取景地）和 Koʻolau 山脊。提前30分钟报到。", "$59.95/人"],
+              ["3:30 pm", "Mokoliʻi 景观与 Kualoa Regional Park", "公路对面免费的海滩和山谷景色。"],
+              ["4:30 pm", "开车回威基基（Waikiki）（约45分钟）", "晚餐在 Kapahulu 或威基基；之后不安排。"]
+            ],
+            swap: "东岸常有短暂阵雨；团游风雨无阻。带一件薄外套。" },
+          { date: "周六 12/12", island: "Oahu", title: "恐龙湾（Hanauma Bay）浮潜 + 东南海岸",
+            pace: "适中", paceCls: "", beach: "约1.5小时", drive: "开车约1.5小时", book: ["恐龙湾（Hanauma Bay）门票（周四早7点夏威夷时间）"],
+            items: [
+              ["7:00 am", "马拉松周末的早晨", "Kalākaua Merrie Mile 在 Kalākaua 大道早上7点开跑——早点出发或步行。"],
+              ["8:00 am", "恐龙湾（Hanauma Bay）浮潜", "先看简短的保护视频，然后在浅水珊瑚礁浮潜2–2.5小时。停车 $3 现金，不保证有位；周一、周二关闭。", "$25/人（12岁及以下免费）"],
+              ["11:00 am", "Halona 喷水洞（Blowhole）与观景点（Lookout）", "沿东南海岸风景路线的短暂停留。"],
+              ["12:30 pm", "Waimānalo 海滩（Beach）野餐", "又长又安静的海滩，游泳、午餐。"],
+              ["2:30 pm", "在威基基（Waikiki）还车", "下午自由；早点吃晚饭、早睡——明天马拉松凌晨5点起跑，有烟火。"]
+            ],
+            swap: "如果恐龙湾门票售罄，改在大岛的 A湾浮潜，上午去威基基或 Waimānalo 海滩。" },
+          { date: "周日 12/13", island: "Oahu", title: "马拉松日：冲浪课（surf lesson）与海滩",
+            pace: "轻松", paceCls: "", beach: "约4小时", drive: "不用车", book: ["冲浪课（surf lesson）"],
+            items: [
+              ["5:00 am", "马拉松起跑", "比赛在 Ala Moana Blvd 起跑，有烟火，第5–6英里经过威基基（Waikiki）。醒着的话可以到路边看；否则继续睡。"],
+              ["8:30 am", "慢悠悠的早餐", "不要开车——赛道沿线上午封路。"],
+              ["11:00 am", "团体冲浪课（surf lesson）（2小时）", "请和学校确认时间；赛道沿 Kalākaua 大道。", "约 $105/人"],
+              ["1:30 pm", "晚午餐 + 海滩", "长时间游泳、午睡、吃刨冰（shave ice）。"],
+              ["5:50 pm", "日落 + 瓦胡岛告别晚餐", "想要海边的位子请提前订。"]
+            ],
+            swap: "如果海况或课程时间更适合另一天，可以和周六 12/12 对调。" },
+          { date: "周一 12/14", island: "Big Island", title: "飞大岛，驱车去火山",
+            pace: "长途移动日", paceCls: "long", beach: "0", drive: "开车约2.5小时", book: ["岛际机票（去程）", "科纳（Kona）租车", "火山村（Volcano Village）住宿"],
+            items: [
+              ["6:30 am", "退房；打车或接驳车去 HNL", "出租车约 $30–$60。订一班早上的檀香山（Honolulu）→科纳航班（约45分钟；四人预算约 $280）。"],
+              ["10:30 am", "抵达科纳（Kona） (KOA)，取车", "科纳12月在一个价格追踪网站上均价约 $80/天，去年冬天最便宜车型 $127/天——现在就订。"],
+              ["11:15 am", "在 Kailua-Kona 吃午餐", "Da Poke Shack（10点开门，会卖完）或 Umeke’s Fish Market。"],
+              ["12:30 pm", "沿 11号公路开往火山", "约2小时15分到2.5小时。别绕去 Punaluʻu Bake Shop——据报道风暴后已关闭。"],
+              ["3:00 pm", "入住火山村（Volcano Village）", "休息；这里凉爽潮湿，带件外套。"],
+              ["4:30 pm", "黄昏时去火山口边缘观景台", "入园费 $30/车。留到天黑看火光；先确认哪些观景台开放。", "$30/车"],
+              ["7:00 pm", "村里晚餐", "Kīlauea Lodge（要订位）或 Thai Thai Lemongrass。"]
+            ],
+            swap: "航班晚一些也行——开车和黄昏观景整体顺延即可。" },
+          { date: "周二 12/15", island: "Big Island", title: "火山：火山口、熔岩洞和海拱",
+            pace: "适中", paceCls: "", beach: "0", drive: "公园内开车约2小时", book: [],
+            items: [
+              ["7:30 am", "在村里吃早餐", "Cafe Ono 或住处。"],
+              ["8:30 am", "蒸汽口（Steam Vents）与 Kīlauea Iki 观景台", "火山口边缘的轻松步行。10月时 Keanakākoʻi 附近的一些步道和观景台关闭；请查国家公园通知。"],
+              ["10:00 am", "Thurston 熔岩洞（Nāhuku）", "8am–8pm 有灯。2026年早些时候因桥梁施工改成从东端单向进入；请确认状态。"],
+              ["11:00 am", "Chain of Craters 公路到 Hōlei 海拱", "单程约一小时；壮观的海崖和旧熔岩原。路上没有吃的——自带午餐和水；先确认公路开放。"],
+              ["2:30 pm", "回村里休息", ""],
+              ["5:00 pm", "回到火山口边缘看日落和火光", "喷发只持续几小时，没法提前排；请看 USGS 的基拉韦厄每日更新。"]
+            ],
+            swap: "可选的大额项目：Safari Helicopters 希洛（Hilo）出发的55分钟火山航线（$349/人；仅工作日）——选的话缩短去海拱的路程。" },
+          { date: "周三 12/16", island: "Big Island", title: "瀑布、Hāmākua 海岸和怀皮奥 → 瓦科洛亚（Waikoloa）",
+            pace: "长途风景路", paceCls: "long", beach: "约1.5小时", drive: "开车约3.5小时", book: ["瓦科洛亚（Waikoloa）住宿"],
+            items: [
+              ["8:30 am", "退房；开去希洛（Hilo）（约45分钟）", ""],
+              ["9:15 am", "希洛（Hilo） Rainbow Falls", "免费；上午的光线最好。可以去 Suisan Fish Market 买 poke。"],
+              ["10:30 am", "ʻAkaka 瀑布州立公园", "请确认状态——8月风暴后部分步道曾关闭。"],
+              ["12:00 pm", "Honokaʻa 的 Tex Drive In 午餐和马拉萨达（malasada）", ""],
+              ["1:00 pm", "怀皮奥山谷（Waipiʻo Valley）瞭望台", "免费，无需预约；芋头田、黑沙滩和海崖。谷底只能乘接驳车（$75，可选）。", "免费"],
+              ["2:15 pm", "经 Waimea 开往瓦科洛亚（Waikoloa）（约1小时15分）", "路上是牧场风光，空气凉爽。"],
+              ["3:45 pm", "入住；去 A湾海滩和看日落", "水面平静；日落约5:50 pm。"],
+              ["7:00 pm", "步行去 Queens’ MarketPlace 或 Kings’ Shops 晚餐", ""]
+            ],
+            swap: "累了就跳过 ʻAkaka 瀑布，能省一小时。" },
+          { date: "周四 12/17", island: "Big Island", title: "海洋日：水肺潜水（Scuba） + 蝠鲼（Manta Ray）夜游",
+            pace: "活动多但有间隔", paceCls: "", beach: "约2小时", drive: "开车约2小时", book: ["潜水", "蝠鲼（Manta Ray）浮潜"],
+            items: [
+              ["7:30 am", "开车去 Honokōhau 港（约30分钟）", ""],
+              ["8:30 am", "水肺潜水：船潜或 Discover Scuba", "船潜约5–6小时。这是整趟旅行的最后一潜——离12/19的航班40小时以上，也满足任何山顶团或直升机前24小时的要求。", "每位潜水员 $169–$449"],
+              ["2:00 pm", "Umeke’s Fish Market 晚午餐", "港口附近的 poke 饭。"],
+              ["3:00 pm", "回瓦科洛亚（Waikoloa）；泳池和 A湾", "午睡、轻松游泳。"],
+              ["4:45 pm", "开回 Honokōhau 港参加蝠鲼（Manta Ray）浮潜", "日落出发前约30分钟报到；乘船约25分钟到蝠鲼点，水里30–45分钟。", "约 $99/人"],
+              ["8:30 pm", "返回，吃个晚饭", "带毛巾和保暖衣物，回程船上会冷。"]
+            ],
+            swap: "不潜水？上午改成 A湾或 Kua Bay 浮潜，再来个长长的海滩午餐；蝠鲼夜游照留。" },
+          { date: "周五 12/18", island: "Big Island", title: "Polulū 山谷、科哈拉海岸（Kohala Coast）和长长的海滩下午",
+            pace: "轻松到适中", paceCls: "", beach: "约3小时", drive: "开车约2.5小时", book: ["最后一晚的晚餐"],
+            items: [
+              ["7:15 am", "北上开往 Polulū（约1小时）", "9点前到；小停车场晴天早上会满。"],
+              ["8:15 am", "Polulū 瞭望台与下谷步道", "0.6英里、下降420英尺；预留2–3小时。穿结实的鞋；不能游泳；瞭望台没有洗手间。"],
+              ["11:30 am", "Kapaʻau 与 Hawi", "看 Kamehameha 大帝雕像，然后在镇上吃午餐。"],
+              ["1:30 pm", "Kawaihae Marketplace 的 poke 饭团", ""],
+              ["2:30 pm", "Hāpuna 海滩", "长长的白沙滩，什么都不用做的三小时。"],
+              ["5:50 pm", "A湾日落", ""],
+              ["7:00 pm", "最后一晚：海边晚餐", "Brown’s Beach House、CanoeHouse、Kamuela Provision Company 和 Huggo’s 是常见的“大餐”选择；12月请订位。"],
+              ["9:30 pm", "收拾行李，早点睡", "明天早班机；行李先收好。"]
+            ],
+            swap: "大额选项：直升机（Blue Hawaiian Kohala Coast，50分钟，$439/人）排在下午1:30以后——要等离12/17最后一潜满24小时（请再向运营商确认），会取代 Hāpuna 的时间。冒纳凯阿山顶团已不建议：晚上10点后才回、次日早班机。" },
+          { date: "周六 12/19", island: "Big Island", title: "早起返程：科纳（Kona） → 檀香山（Honolulu） → 芝加哥",
+            pace: "早起，别拖", paceCls: "long", beach: "0", drive: "到机场30–40分钟", book: ["岛际机票（回程）"],
+            items: [
+              ["6:30 am", "起床，收拾完毕", "前一晚行李就收好。"],
+              ["7:15 am", "出发去科纳（Kona）机场 (KOA)", "车程约25–40分钟；先还车再托运。"],
+              ["约 9:30–10:00 am", "搭 KOA → HNL 的上午航班（约45分钟）", "建议最晚上午10点前起飞：岛际机票和美联航是分开购买的，延误或取消没有保护。"],
+              ["约 11:00 am", "抵达 HNL，取行李", "分开出票：要取行李，再到 United 柜台重新托运（通常起飞前2–3小时开放）。"],
+              ["中午", "在机场吃午餐、休息", "4–5小时的缓冲是保险，不是浪费。"],
+              ["4:50 pm", "UA 航班 HNL → ORD", "周日 12/20 凌晨 5:01 到芝加哥（飞行8小时11分）。"]
+            ],
+            swap: "最晚也别订上午11点以后起飞的岛际航班。如果航班延误，立刻联系航空公司。" }
+        ];
+
+        function renderPlan() {
+          var h = "";
+          DAYS.forEach(function (d) {
+            var cls = d.island === "Oahu" ? "oahu" : "big";
+            h += '<article class="day ' + (d.island === "Oahu" ? "" : "big") + '"><div class="day-head"><span class="day-date">' + d.date + "</span><h3>" + d.title + "</h3></div>" +
+              '<div class="chips"><span class="chip ' + cls + '">' + (d.island === "Oahu" ? "瓦胡岛 Oʻahu" : "大岛 Big Island") + '</span><span class="chip ' + d.paceCls + '">' + d.pace + '</span><span class="chip">海边 ' + d.beach + '</span><span class="chip">' + d.drive + "</span>" +
+              d.book.map(function (b) { return '<span class="chip book">要订：' + b + "</span>"; }).join("") + "</div>" +
+              '<ul class="tl">' + d.items.map(function (it) {
+                return '<li><span class="t">' + it[0] + '</span><div><div class="h">' + it[1] + "</div>" + (it[2] ? '<div class="d">' + it[2] + "</div>" : "") + (it[3] ? '<div class="c">' + it[3] + "</div>" : "") + "</div></li>";
+              }).join("") + "</ul>" +
+              (d.swap ? '<p class="bk"><b>备选/调整：</b>' + d.swap + "</p>" : "") + "</article>";
+          });
+          $("days").innerHTML = h;
+        }
+
+        /* ---------- 分工 ---------- */
+        var PEOPLE = ["A（芝加哥）", "B（芝加哥）", "C（芝加哥）", "D（西雅图）"];
+        function T(id, g, loc, ref, o, t, d, due, u) { return { id: id, g: g, loc: loc, ref: ref, o: o, t: t, d: d, due: due, u: u || [] }; }
+        var L1 = "瓦胡岛 Oʻahu", L2 = "大岛·火山村 Volcano", L3 = "大岛·瓦科洛亚/科纳 Waikoloa & Kona", L4 = "跨岛 / 通用";
+        function ota3(q, k, rooms) { var c = TRIP[k][0], e = TRIP[k][1]; return [["Expedia 搜索", lkExpedia(q, c, e, rooms)], ["Booking 搜索", lkBooking(q, c, e, rooms)], ["Google Hotels", lkGoogleH(q, c, e)]]; }
+        var TASKS = [
+          T("t1", "住宿", L1, "stay:A", 0, "订威基基（Waikiki） 住宿（12/9–14，5晚）", "对比 Outrigger Waikiki Beachcomber（2300 Kalākaua Ave）、Waikiki Banyan 公寓（201 ʻOhua Ave）等；查度假村费和停车费；尽量选可免费取消的价格。", "10月底前",
+            [["Outrigger 官网", "https://www.outrigger.com/hawaii/oahu/outrigger-waikiki-beachcomber-hotel"], ["Waikiki Banyan 房源", "https://midwayvacations.com/search-by-building/waikiki-banyan/"]].concat(ota3("Waikiki, Honolulu", "A", 2))),
+          T("t2", "住宿", L2, "stay:V", 1, "订火山村（Volcano Village） 住宿（12/14–16，2晚）", "Volcano House（1 Crater Rim Dr）只有33间房，官网直订；也看 Volcano Village Lodge、Kīlauea Lodge（19-3948 Old Volcano Rd）、Volcano Heritage Cottages。向房东要县登记号。", "尽快（10月底前）",
+            [["Volcano House 官网", "https://hawaiivolcanohouse.com/"], ["Volcano Village Lodge", "https://volcanovillagelodge.com/"], ["Kīlauea Lodge", "https://reservations.kilauealodge.com/kilauealodge/"], ["Volcano Heritage Cottages", "https://volcanoheritagecottages.com/"]]),
+          T("t3", "住宿", L3, "stay:B", 2, "订瓦科洛亚（Waikoloa） 住宿（12/16–19，3晚）", "优先度假区内的公寓（走路能到 A湾 ʻAnaehoʻomalu Bay）；不要订 Waikoloa Village 内陆的房子。确认税号和县登记号。", "10月底前",
+            [["Waikoloa Colony Villas", "https://www.waikoloabeachresort.com/big-island-accommodations/waikoloa-colony-villas/"], ["KBM Resorts", "https://www.kbmresorts.com/resorts/230/waikoloa-colony-villas"], ["Vrbo 搜索", lkVrbo("Waikoloa Beach Resort, Hawaii", TRIP.B[0], TRIP.B[1])]].concat(ota3("Waikoloa Beach Resort, Hawaii", "B", 2))),
+          T("t4", "交通", L4, null, 3, "订岛际机票：12/14 HNL→KOA（早班）", "上午航班（约45分钟）；订之前先看行李规定。", "11月上旬",
+            [["Google Flights 搜索", "https://www.google.com/travel/flights?q=Flights%20from%20HNL%20to%20KOA%20on%202026-12-14"]]),
+          T("t5", "交通", L4, null, 3, "订岛际机票：12/19 KOA→HNL（上午10点前起飞）", "回程 4:50pm 的美联航是分开购买的——一定订上午的，别订下午的。", "11月上旬",
+            [["Google Flights 搜索", "https://www.google.com/travel/flights?q=Flights%20from%20KOA%20to%20HNL%20on%202026-12-19"]]),
+          T("t6", "交通", L3, null, 3, "订大岛租车（12/14–19，科纳机场 KOA：73-200 Kupipi St）", "选可免费取消的，之后再比价；12月是旺季。", "10月底前",
+            [["Costco Travel / Kayak 比价", "https://www.kayak.com/cars/Kailua-Kona-Keahole-KOA/2026-12-14/2026-12-19"]]),
+          T("t7", "交通", L1, null, 0, "订瓦胡岛租车（12/11–12，2天）", "也可以比较一下 Hui 共享汽车；酒店停车约 $45/晚（Waikiki Banyan 免费）。", "11月中",
+            [["Kayak 比价", "https://www.kayak.com/cars/Honolulu-Waikiki-HI/2026-12-11/2026-12-13"]]),
+          T("t8", "活动", L1, "act:diamond", 0, "钻石头山（Diamond Head） 预约（12/10 8:00）", "州立公园网站预约；最早可提前30天预约，所以 12/10 的时段约 11/10 起可订，设好提醒。", "11/10 起可订",
+            [["州立公园预约", "https://gostateparks.hawaii.gov/diamondhead/"]]),
+          T("t9", "活动", L1, "act:hanauma", 3, "恐龙湾（Hanauma Bay） 门票（12/12 8:00；100 Hanauma Bay Rd）", "12/10 周四夏威夷时间 7:00 抢票（= 芝加哥 11:00 = 西雅图 9:00）；设好闹钟。官方系统提前2天放票。", "12/10 夏威夷时间 7:00",
+            [["官方订票系统", "https://web5.hnl.info/pros-ticketing/event/hbay-online-reservation"]]),
+          T("t10", "活动", L1, "act:kualoa", 0, "Kualoa 牧场 Movie Sites 团（12/11 13:30；49-560 Kamehameha Hwy）", "提前2–3周订；检查是否要自驾或订接送（约 $30/人）。", "11月中",
+            [["Kualoa 官网", "https://www.kualoa.com/"]]),
+          T("t11", "活动", L1, "act:surf", 3, "冲浪课 Waikiki（12/13 约11:00）", "推荐 Faith Surf School（2335 Kalākaua Ave）；确认马拉松当天时间和年龄规定。", "11月底",
+            [["Faith Surf School", "https://faithsurfschool.com/surf-lessons/"], ["Kahu Surfing School", "https://kahusurfingschool.com/"]]),
+          T("t12", "活动", L3, "act:scuba", 2, "科纳水肺潜水（12/17 8:30，Honokōhau Harbor）——先确认谁有证", "有证订船潜，没有证订 Discover Scuba；确认体检表（PADI Medical Statement）。", "11月中",
+            [["Jack’s Diving Locker", "https://jacksdivinglocker.com/"]]),
+          T("t13", "活动", L3, "act:manta", 2, "蝠鲼夜间浮潜 Manta Ray（12/17 日落，Honokōhau Harbor）", "优先 Honokōhau 港的小团（Kona Snorkel Trips、Torpedo Tours）。", "11月中",
+            [["Kona Snorkel Trips", "https://konasnorkeltrips.com/"], ["Dolphin Discoveries", "https://dolphindiscoveries.com/"]]),
+          T("t14", "活动", L2, "act:heli", 1, "（可选）直升机", "只有决定要大额花费时才订；问清楚潜水后要等多久。Safari 从希洛 (Hilo) 起飞，Blue Hawaiian 从 Waikoloa 起飞。", "12月初",
+            [["搜 Safari Helicopters", gq("Safari Helicopters Hilo volcano tour book")], ["搜 Blue Hawaiian", gq("Blue Hawaiian Waikoloa Kohala Coast Adventure book")]]),
+          T("t15", "餐厅", L2, null, 1, "订位：12/14 火山村晚餐 Kīlauea Lodge（19-3948 Old Volcano Rd）", "要订位；也可以改去 Thai Thai Lemongrass。", "12月初",
+            [["Kīlauea Lodge 订位", "https://reservations.kilauealodge.com/kilauealodge/"]]),
+          T("t16", "餐厅", L3, null, 2, "订位：12/18 最后一晚海边晚餐", "Brown’s Beach House（Fairmont Orchid）/ CanoeHouse / Huggo’s 等；12月请订位。", "12月初",
+            [["搜 Brown’s Beach House 订位", gq("Brown's Beach House Fairmont Orchid reservations")]]),
+          T("t17", "出发前", L4, null, 4, "查实时价格并更新到这份计划", "点各卡片里的预填日期链接（或用 Cowork/Chrome 提示词）查价，把实际价格填进页面。", "每次订之前"),
+          T("t18", "出发前", L4, null, 2, "行前清单：防晒、浮潜装备、徒步鞋、保暖外套、晕船药、毛巾", "火山村和蝠鲼船上会冷；Polulū 要穿结实的鞋。", "12月初"),
+          T("t19", "出发前", L4, null, 3, "值机和行李规定检查；travel insurance", "Basic Economy 的行李、选座规则；12/8 开始值机。西雅图的 D 单独出发，要对一下抵达时间。", "12/8"),
+          T("t20", "行程中", L2, null, 1, "每天早上查：USGS 基拉韦厄更新、国家公园通知、天气和海况", "决定当天去不去哪些观景台、步道和海边。", "每天早上",
+            [["USGS 基拉韦厄", "https://www.usgs.gov/volcanoes/kilauea"], ["国家公园通知", "https://www.nps.gov/havo/"]]),
+          T("t21", "行程中", L4, null, 3, "记账和最后 AA 结算", "用 Splitwise 或表格记所有人垫付的钱。", "全程")
+        ];
+        var DONE = {};
+
+        function ownerName(o) { return o === 4 ? "全体" : PEOPLE[o]; }
+        function renderNames() {
+          $("nameRow").innerHTML = PEOPLE.map(function (n, i) {
+            return '<label>成员 ' + (i + 1) + ' <input type="text" data-name="' + i + '" value="' + plain(n) + '" style="width:130px" /></label>';
+          }).join("");
+        }
+        var TASKVIEW = "loc";
+        function taskRow(t) {
+          var opts = "";
+          for (var i = 0; i < 5; i++) opts += '<option value="' + i + '"' + (i === t.o ? " selected" : "") + ">" + plain(ownerName(i)) + "</option>";
+          return '<div class="task' + (DONE[t.id] ? " done" : "") + '" data-task="' + t.id + '">' +
+            '<label class="chk"><input type="checkbox" class="task-done"' + (DONE[t.id] ? " checked" : "") + ' /></label>' +
+            '<div><div class="tloc">' + t.loc + " · " + t.g + '</div><div class="tt">' + t.t + '</div><div class="td">' + t.d + '</div><div class="tdue">截止：' + t.due + "</div>" +
+            (t.u.length ? '<div class="tlinks">' + t.u.map(function (x, k) { return linkA(x[0], x[1], k === 0); }).join("") + "</div>" : "") + "</div>" +
+            '<select class="task-owner" aria-label="负责人">' + opts + "</select></div>";
+        }
+        function renderTasks() {
+          var groups = [];
+          if (TASKVIEW === "loc") groups = [L1, L2, L3, L4].map(function (x) { return [x, function (t) { return t.loc === x; }]; });
+          else if (TASKVIEW === "cat") { var seen = {}; TASKS.forEach(function (t) { if (!seen[t.g]) { seen[t.g] = 1; groups.push([t.g, (function (g) { return function (t) { return t.g === g; }; })(t.g)]); } }); }
+          else groups = [0, 1, 2, 3, 4].map(function (i) { return [ownerName(i) + (i === 4 ? "（大家都做）" : "") + " 负责", function (t) { return t.o === i; }]; });
+          var h = "";
+          groups.forEach(function (gr) {
+            var list = TASKS.filter(gr[1]);
+            if (!list.length) return;
+            h += '<h2 class="sec-h">' + gr[0] + "</h2>" + list.map(taskRow).join("");
+          });
+          $("taskList").innerHTML = h;
+          updateTaskSummary(); refreshOwners();
+        }
+        $("segTaskView").addEventListener("click", function (e) {
+          var b = e.target.closest("button"); if (!b) return;
+          TASKVIEW = b.getAttribute("data-v");
+          var bs = this.querySelectorAll("button");
+          for (var i = 0; i < bs.length; i++) bs[i].setAttribute("aria-pressed", bs[i] === b ? "true" : "false");
+          renderTasks();
+        });
+        function updateTaskSummary() {
+          var counts = [0, 0, 0, 0, 0], open = [0, 0, 0, 0, 0];
+          TASKS.forEach(function (t) { counts[t.o]++; if (!DONE[t.id]) open[t.o]++; });
+          var total = TASKS.length, done = TASKS.filter(function (t) { return DONE[t.id]; }).length;
+          $("taskSummary").innerHTML = "<b>完成 " + done + " / " + total + "。</b> " +
+            PEOPLE.map(function (n, i) { return plain(n) + "：" + counts[i] + " 项（未完成 " + open[i] + "）"; }).join(" · ") +
+            " · 全体：" + counts[4] + " 项";
+        }
+        $("nameRow").addEventListener("input", function (e) {
+          var i = e.target.getAttribute("data-name"); if (i === null) return;
+          PEOPLE[parseInt(i, 10)] = e.target.value || ("成员" + (parseInt(i, 10) + 1));
+          var sels = document.querySelectorAll(".task-owner");
+          for (var s = 0; s < sels.length; s++) {
+            var cur = sels[s].value, o = sels[s].options;
+            for (var k = 0; k < o.length; k++) o[k].textContent = ownerName(k);
+            sels[s].value = cur;
+          }
+          updateTaskSummary(); refreshOwners();
+        });
+        $("taskList").addEventListener("change", function (e) {
+          var row = e.target.closest(".task"); if (!row) return;
+          var t = byId(TASKS, row.getAttribute("data-task"));
+          if (e.target.classList.contains("task-done")) { DONE[t.id] = e.target.checked; row.classList.toggle("done", e.target.checked); }
+          else if (e.target.classList.contains("task-owner")) { t.o = parseInt(e.target.value, 10); if (TASKVIEW === "owner") { renderTasks(); return; } }
+          updateTaskSummary(); refreshOwners();
+        });
+        $("btnExport").addEventListener("click", function () {
+          var lines = ["夏威夷 12/9–19 分工"];
+          var cur = "";
+          TASKS.slice().sort(function (a, b) { return [L1, L2, L3, L4].indexOf(a.loc) - [L1, L2, L3, L4].indexOf(b.loc); }).forEach(function (t) {
+            if (t.loc !== cur) { cur = t.loc; lines.push("", "【" + cur + "】"); }
+            lines.push((DONE[t.id] ? "[x] " : "[ ] ") + t.t + " — " + ownerName(t.o) + "（" + t.due + "）");
+          });
+          var ta = $("taskText"); ta.hidden = false; ta.value = lines.join("\n"); ta.focus(); ta.select();
+          try { if (navigator.clipboard) navigator.clipboard.writeText(ta.value); } catch (e) { /* 手动复制 */ }
+        });
+
+        /* ---------- 预算条 ---------- */
+        function updateBudget() {
+          var A = stayTotal("A"), V = stayTotal("V"), B = stayTotal("B");
+          var acts = 0, n = 0;
+          ACTS.forEach(function (a) { var c = actCost(a); acts += c; if (a.on && c > 0) n++; });
+          var cars = PLAN.car * PLAN.carDays + PLAN.oahuCar;
+          var food = PLAN.food * PLAN.foodDays;
+          var total = PLAN.flights + PLAN.inter + A + V + B + acts + cars + food;
+          saveState();
+          $("bbTotal").textContent = "约 " + money(round100(total));
+          $("bbPer").textContent = "每人 " + money(round100(total / 4));
+          var warns = [];
+          ["A", "V", "B"].forEach(function (k) {
+            if (!stayNightly(stayOpt(k))) warns.push(STAYS[k].title + " 还没有报价——请到“住宿”里输入价格。");
+          });
+          var sA = stayOpt("A"), sV = stayOpt("V"), sB = stayOpt("B");
+          $("bbBody").innerHTML = "<table>" +
+            "<tr><td>往返檀香山机票（已订，请填实付）</td><td>" + money(PLAN.flights) + "</td></tr>" +
+            "<tr><td>岛际机票两程：12/14 HNL→KOA、12/19 KOA→HNL（估算）</td><td>" + money(PLAN.inter) + "</td></tr>" +
+            "<tr><td>威基基5晚：" + plain(sA.name) + "</td><td>" + money(A) + "</td></tr>" +
+            "<tr><td>火山村2晚：" + plain(sV.name) + "</td><td>" + money(V) + "</td></tr>" +
+            "<tr><td>瓦科洛亚3晚：" + plain(sB.name) + "</td><td>" + money(B) + "</td></tr>" +
+            "<tr><td>活动（已勾选的收费项目 " + n + " 个）</td><td>" + money(acts) + "</td></tr>" +
+            "<tr><td>租车（大岛5天 + 瓦胡岛2天）</td><td>" + money(cars) + "</td></tr>" +
+            "<tr><td>餐饮（10天）</td><td>" + money(food) + "</td></tr></table>" +
+            warns.map(function (w) { return '<p class="warn">' + w + "</p>"; }).join("") +
+            '<p class="fine">不含小费、油费、纪念品，以及（除非在“住宿”里勾选）度假村费。机票是你们已订的，请在“活动”页底部填实付金额；酒店价格是10月18–19日的快照；活动价格查于2026年10月21日——订之前请再确认。</p>';
+        }
+
+        /* ---------- 记在本机（只存在你自己的浏览器里） ---------- */
+        var KEY = "hawaii2026-v1";
+        function saveState() {
+          try {
+            localStorage.setItem(KEY, JSON.stringify({
+              plan: { rooms: PLAN.rooms, fees: PLAN.fees, flights: PLAN.flights, inter: PLAN.inter, stay: PLAN.stay, nightly: PLAN.nightly, car: PLAN.car, oahuCar: PLAN.oahuCar, food: PLAN.food },
+              acts: ACTS.map(function (a) { return { id: a.id, on: a.on, opt: a.opt, qty: a.qty }; }),
+              tasks: TASKS.map(function (t) { return { id: t.id, o: t.o }; }), done: DONE, people: PEOPLE
+            }));
+          } catch (e) { /* 无痕模式或沙盒：忽略 */ }
+        }
+        function loadState() {
+          var d; try { d = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { d = null; }
+          if (!d) return;
+          try {
+            Object.keys(d.plan || {}).forEach(function (k) { PLAN[k] = d.plan[k]; });
+            (d.acts || []).forEach(function (x) { var a = byId(ACTS, x.id); if (a && x.opt < a.opts.length) { a.on = x.on; a.opt = x.opt; if (x.qty !== undefined) a.qty = x.qty; } });
+            (d.tasks || []).forEach(function (x) { var t = byId(TASKS, x.id); if (t) t.o = x.o; });
+            DONE = d.done || {};
+            (d.people || []).forEach(function (n, i) { if (n) PEOPLE[i] = n; });
+            $("xFlights").value = PLAN.flights; $("xInter").value = PLAN.inter; $("xCar").value = PLAN.car; $("xOahuCar").value = PLAN.oahuCar; $("xFood").value = PLAN.food;
+            $("chkFees").checked = !!PLAN.fees;
+            var bs = $("segStayRooms").querySelectorAll("button");
+            for (var i = 0; i < bs.length; i++) bs[i].setAttribute("aria-pressed", parseInt(bs[i].getAttribute("data-v"), 10) === PLAN.rooms ? "true" : "false");
+          } catch (e) { /* 数据损坏：用默认值 */ }
+        }
+        $("btnClear").addEventListener("click", function () { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); });
+        loadState();
+
+        /* ---------- 初始化 ---------- */
+        renderPlan();
+        renderStays();
+        renderActs();
+        renderNames();
+        renderTasks();
+        refreshOwners();
+        updateBudget();
+        var start = (location.hash || "").slice(1);
+        showTab(TABS.indexOf(start) >= 0 ? start : "plan");
+      })();
+
+    </script>
+  </body>
+</html>
